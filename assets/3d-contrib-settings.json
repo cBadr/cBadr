@@ -1,16 +1,49 @@
-{
-  "type": "season",
-  "backgroundImage": "",
-  "settings": {
-    "l1Color": "#112240",
-    "l2Color": "#1E3A5F",
-    "l3Color": "#1E88E5",
-    "l4Color": "#4FC3F7",
-    "dayOfWeekColor": "#64FFDA",
-    "monthColor": "#CCD6F6",
-    "weekNumberColor": "#8892B0",
-    "contributionColor": "#64FFDA",
+[
+  {
+    "type": "rainbow",
+    "fileName": "profile-night-rainbow.svg",
+    "backgroundColor": "#0A192F",
+    "foregroundColor": "#CCD6F6",
+    "strongColor": "#64FFDA",
+    "weakColor": "#8892B0",
+    "radarColor": "#64FFDA",
     "growingAnimation": true,
-    "showWeekNumber": false
+    "saturation": "70%",
+    "contribLightness": [
+      "15%",
+      "35%",
+      "50%",
+      "65%",
+      "80%"
+    ],
+    "duration": "10s",
+    "hueRatio": -4
+  },
+  {
+    "type": "season",
+    "fileName": "profile-season-animate.svg",
+    "backgroundColor": "#0A192F",
+    "foregroundColor": "#CCD6F6",
+    "strongColor": "#64FFDA",
+    "weakColor": "#8892B0",
+    "radarColor": "#1E88E5",
+    "growingAnimation": true
+  },
+  {
+    "type": "normal",
+    "fileName": "profile-night-view.svg",
+    "backgroundColor": "#0A192F",
+    "foregroundColor": "#CCD6F6",
+    "strongColor": "#64FFDA",
+    "weakColor": "#8892B0",
+    "radarColor": "#1E88E5",
+    "growingAnimation": true,
+    "contribColors": [
+      "#112240",
+      "#1E3A5F",
+      "#1E88E5",
+      "#4FC3F7",
+      "#64FFDA"
+    ]
   }
-}
+]
