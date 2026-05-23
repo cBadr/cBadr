@@ -1,0 +1,637 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" width="1280" height="760" role="img" aria-label="3D rotating Earth globe — connections from worldwide cities to Cairo, Egypt">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Italiana&amp;family=Cinzel:wght@500;700&amp;family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,500&amp;family=JetBrains+Mono:wght@300;500;700&amp;display=swap');
+      .ita    { font-family: 'Italiana', 'Trajan Pro', Georgia, serif; }
+      .cin    { font-family: 'Cinzel', 'Trajan Pro', Georgia, serif; }
+      .cor    { font-family: 'Cormorant Garamond', Garamond, Georgia, serif; }
+      .mono   { font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace; }
+    </style>
+
+    <!-- Globe body: 3D sphere shading (off-center radial for light source effect) -->
+    <radialGradient id="globeBody" cx="38%" cy="32%" r="75%">
+      <stop offset="0%"   stop-color="#1E5A8A"/>
+      <stop offset="35%"  stop-color="#0F3A6C"/>
+      <stop offset="70%"  stop-color="#0A192F"/>
+      <stop offset="100%" stop-color="#020817"/>
+    </radialGradient>
+
+    <!-- Atmospheric halo -->
+    <radialGradient id="atmosGrad" cx="50%" cy="50%" r="55%">
+      <stop offset="60%"  stop-color="#64FFDA" stop-opacity="0"/>
+      <stop offset="78%"  stop-color="#64FFDA" stop-opacity="0.18"/>
+      <stop offset="88%"  stop-color="#4FC3F7" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#1E88E5" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Title gradient -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#4FC3F7">
+        <animate attributeName="offset" values="0;0.2;0" dur="9s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%"  stop-color="#64FFDA">
+        <animate attributeName="offset" values="0.5;0.6;0.5" dur="9s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#1E88E5">
+        <animate attributeName="offset" values="1;0.8;1" dur="9s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Card body gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#112240"/>
+      <stop offset="100%" stop-color="#0A192F"/>
+    </linearGradient>
+
+    <!-- Connection arc gradient -->
+    <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#64FFDA" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#64FFDA" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#FF6B9D" stop-opacity="0.6"/>
+    </linearGradient>
+
+    <!-- Globe clip area -->
+    <clipPath id="globeArea">
+      <circle cx="640" cy="400" r="200"/>
+    </clipPath>
+
+    <!-- Soft glow filter -->
+    <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="3"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Cinema glow (multi-layer) -->
+    <filter id="cinemaGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="b1"/>
+      <feGaussianBlur stdDeviation="8" in="SourceGraphic" result="b2"/>
+      <feFlood flood-color="#64FFDA" flood-opacity="0.5" result="c1"/>
+      <feComposite in="c1" in2="b1" operator="in" result="g1"/>
+      <feFlood flood-color="#1E88E5" flood-opacity="0.3" result="c2"/>
+      <feComposite in="c2" in2="b2" operator="in" result="g2"/>
+      <feMerge>
+        <feMergeNode in="g2"/>
+        <feMergeNode in="g1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Egypt-specific red glow -->
+    <filter id="egyptGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="4" result="b1"/>
+      <feFlood flood-color="#FF6B9D" flood-opacity="0.85" result="c1"/>
+      <feComposite in="c1" in2="b1" operator="in" result="g1"/>
+      <feMerge>
+        <feMergeNode in="g1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- ============ LAND MASSES (stylized continents as dot clusters) ============ -->
+    <!-- Designed to span 0..420 horizontal (one Earth circumference at globe scale) -->
+    <symbol id="continents" viewBox="0 0 420 400" overflow="visible">
+      <g fill="#4FC3F7">
+        <!-- Europe (upper, around longitude 0-30) -->
+        <g opacity="0.55">
+          <circle cx="180" cy="55"  r="1.4"/><circle cx="185" cy="50" r="1.2"/><circle cx="190" cy="58" r="1.4"/>
+          <circle cx="195" cy="48" r="1.3"/><circle cx="200" cy="54" r="1.5"/><circle cx="205" cy="62" r="1.2"/>
+          <circle cx="210" cy="56" r="1.4"/><circle cx="215" cy="50" r="1.3"/><circle cx="220" cy="58" r="1.3"/>
+          <circle cx="200" cy="70" r="1.3"/><circle cx="208" cy="74" r="1.2"/><circle cx="215" cy="68" r="1.4"/>
+          <circle cx="225" cy="62" r="1.3"/><circle cx="232" cy="56" r="1.2"/><circle cx="240" cy="62" r="1.3"/>
+        </g>
+        <!-- Africa (centered around longitude 20-30, latitude 0-30S) -->
+        <g opacity="0.65">
+          <circle cx="195" cy="100" r="1.5"/><circle cx="205" cy="105" r="1.4"/><circle cx="215" cy="108" r="1.5"/>
+          <circle cx="200" cy="120" r="1.5"/><circle cx="210" cy="118" r="1.5"/><circle cx="220" cy="115" r="1.4"/>
+          <circle cx="195" cy="138" r="1.4"/><circle cx="205" cy="135" r="1.5"/><circle cx="215" cy="140" r="1.5"/>
+          <circle cx="225" cy="142" r="1.4"/><circle cx="235" cy="148" r="1.3"/>
+          <circle cx="190" cy="158" r="1.4"/><circle cx="200" cy="158" r="1.5"/><circle cx="212" cy="160" r="1.5"/>
+          <circle cx="222" cy="165" r="1.4"/><circle cx="232" cy="170" r="1.3"/>
+          <circle cx="195" cy="180" r="1.4"/><circle cx="205" cy="182" r="1.5"/><circle cx="215" cy="184" r="1.4"/>
+          <circle cx="225" cy="188" r="1.3"/>
+          <circle cx="200" cy="205" r="1.4"/><circle cx="210" cy="208" r="1.4"/><circle cx="220" cy="210" r="1.4"/>
+          <circle cx="205" cy="225" r="1.3"/><circle cx="213" cy="228" r="1.3"/>
+          <circle cx="208" cy="245" r="1.2"/><circle cx="212" cy="252" r="1.2"/>
+          <!-- Madagascar -->
+          <circle cx="245" cy="208" r="1.2"/><circle cx="248" cy="215" r="1.2"/><circle cx="250" cy="220" r="1.1"/>
+        </g>
+        <!-- Middle East / Arabia (around lon 40-55) -->
+        <g opacity="0.6">
+          <circle cx="245" cy="100" r="1.4"/><circle cx="252" cy="108" r="1.3"/><circle cx="248" cy="118" r="1.4"/>
+          <circle cx="255" cy="115" r="1.3"/><circle cx="262" cy="122" r="1.3"/><circle cx="258" cy="130" r="1.2"/>
+          <circle cx="265" cy="138" r="1.2"/>
+        </g>
+        <!-- Asia (lon 60-150, lat 20-60N) -->
+        <g opacity="0.55">
+          <circle cx="270" cy="55" r="1.4"/><circle cx="280" cy="50" r="1.3"/><circle cx="290" cy="55" r="1.4"/>
+          <circle cx="300" cy="48" r="1.3"/><circle cx="310" cy="55" r="1.4"/><circle cx="320" cy="50" r="1.3"/>
+          <circle cx="280" cy="68" r="1.4"/><circle cx="295" cy="70" r="1.3"/><circle cx="310" cy="65" r="1.4"/>
+          <circle cx="325" cy="68" r="1.3"/><circle cx="340" cy="72" r="1.4"/><circle cx="355" cy="68" r="1.3"/>
+          <circle cx="285" cy="85" r="1.4"/><circle cx="300" cy="88" r="1.3"/><circle cx="315" cy="82" r="1.4"/>
+          <circle cx="330" cy="85" r="1.3"/><circle cx="345" cy="88" r="1.4"/>
+          <circle cx="295" cy="100" r="1.3"/><circle cx="310" cy="105" r="1.4"/><circle cx="325" cy="100" r="1.3"/>
+          <circle cx="340" cy="105" r="1.4"/>
+          <circle cx="305" cy="120" r="1.3"/><circle cx="320" cy="122" r="1.4"/><circle cx="335" cy="125" r="1.3"/>
+          <!-- India peninsula -->
+          <circle cx="295" cy="135" r="1.4"/><circle cx="290" cy="148" r="1.3"/><circle cx="298" cy="160" r="1.3"/>
+          <!-- SE Asia / Indonesia -->
+          <circle cx="345" cy="155" r="1.2"/><circle cx="358" cy="160" r="1.2"/><circle cx="350" cy="170" r="1.1"/>
+          <circle cx="365" cy="172" r="1.2"/>
+        </g>
+        <!-- Australia (lon 130-150, lat 15-35S) -->
+        <g opacity="0.55">
+          <circle cx="370" cy="200" r="1.4"/><circle cx="382" cy="205" r="1.3"/><circle cx="395" cy="208" r="1.4"/>
+          <circle cx="378" cy="215" r="1.3"/><circle cx="390" cy="220" r="1.4"/><circle cx="400" cy="215" r="1.3"/>
+          <circle cx="385" cy="225" r="1.3"/>
+        </g>
+        <!-- North America (wraps from right edge / lon 240-300 → maps to x = 280-350 if we offset start) -->
+        <!-- Actually using world map projection where center is at 0° longitude: NA is at lon -100 to -70 → maps to x = 50-90 in 0..360 view if we use western-centered, or just place on left side -->
+        <g opacity="0.55">
+          <circle cx="45"  cy="60" r="1.4"/><circle cx="55" cy="55" r="1.4"/><circle cx="65" cy="58" r="1.3"/>
+          <circle cx="75" cy="55" r="1.4"/><circle cx="85" cy="60" r="1.3"/><circle cx="95" cy="55" r="1.4"/>
+          <circle cx="50" cy="75" r="1.4"/><circle cx="65" cy="78" r="1.3"/><circle cx="80" cy="72" r="1.4"/>
+          <circle cx="95" cy="75" r="1.3"/><circle cx="110" cy="80" r="1.4"/><circle cx="125" cy="76" r="1.3"/>
+          <circle cx="60" cy="92" r="1.4"/><circle cx="75" cy="95" r="1.3"/><circle cx="90" cy="92" r="1.4"/>
+          <circle cx="105" cy="95" r="1.4"/><circle cx="120" cy="98" r="1.3"/><circle cx="135" cy="100" r="1.3"/>
+          <circle cx="70" cy="112" r="1.4"/><circle cx="85" cy="115" r="1.3"/><circle cx="100" cy="115" r="1.4"/>
+          <circle cx="115" cy="118" r="1.3"/><circle cx="130" cy="120" r="1.4"/>
+          <circle cx="85" cy="135" r="1.3"/><circle cx="100" cy="138" r="1.3"/><circle cx="115" cy="135" r="1.4"/>
+          <circle cx="125" cy="140" r="1.3"/>
+          <!-- Central America narrow strip -->
+          <circle cx="100" cy="155" r="1.2"/><circle cx="108" cy="162" r="1.1"/><circle cx="115" cy="170" r="1.1"/>
+        </g>
+        <!-- South America (lon -75 to -35) -->
+        <g opacity="0.55">
+          <circle cx="120" cy="180" r="1.3"/><circle cx="135" cy="178" r="1.4"/><circle cx="145" cy="185" r="1.3"/>
+          <circle cx="125" cy="195" r="1.4"/><circle cx="138" cy="198" r="1.4"/><circle cx="150" cy="200" r="1.3"/>
+          <circle cx="130" cy="215" r="1.4"/><circle cx="142" cy="218" r="1.3"/><circle cx="152" cy="220" r="1.3"/>
+          <circle cx="135" cy="235" r="1.3"/><circle cx="145" cy="238" r="1.3"/>
+          <circle cx="138" cy="255" r="1.2"/><circle cx="142" cy="262" r="1.2"/>
+          <circle cx="140" cy="278" r="1.1"/>
+        </g>
+      </g>
+      <!-- Smaller secondary dots (denser data nodes) -->
+      <g fill="#64FFDA" opacity="0.35">
+        <circle cx="200" cy="115" r="0.8"/><circle cx="215" cy="132" r="0.8"/><circle cx="225" cy="158" r="0.8"/>
+        <circle cx="190" cy="175" r="0.8"/><circle cx="208" cy="195" r="0.8"/><circle cx="218" cy="220" r="0.7"/>
+        <circle cx="60" cy="68" r="0.8"/><circle cx="90" cy="82" r="0.8"/><circle cx="118" cy="106" r="0.8"/>
+        <circle cx="285" cy="62" r="0.8"/><circle cx="312" cy="78" r="0.8"/><circle cx="333" cy="95" r="0.8"/>
+        <circle cx="376" cy="212" r="0.7"/><circle cx="135" cy="208" r="0.8"/><circle cx="148" cy="225" r="0.7"/>
+      </g>
+    </symbol>
+
+    <!-- ============ STAT CARD TEMPLATE (rounded) ============ -->
+    <symbol id="statCard" viewBox="0 0 220 90" overflow="visible">
+      <rect x="2" y="2" width="216" height="86" rx="22" ry="22"
+            fill="url(#cardGrad)" stroke="#64FFDA" stroke-width="1" opacity="0.95"/>
+      <rect x="2" y="2" width="216" height="86" rx="22" ry="22"
+            fill="none" stroke="#64FFDA" stroke-width="0.5" opacity="0.4"/>
+    </symbol>
+  </defs>
+
+  <!-- ════════════ BACKGROUND ════════════ -->
+  <rect width="1280" height="760" fill="#020817"/>
+
+  <!-- Starfield -->
+  <g fill="#FFFFFF">
+    <circle cx="80"   cy="60"  r="0.8"><animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite"/></circle>
+    <circle cx="160"  cy="120" r="0.6"><animate attributeName="opacity" values="0.2;0.9;0.2" dur="4s" repeatCount="indefinite" begin="-1s"/></circle>
+    <circle cx="240"  cy="80"  r="0.9"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.5s" repeatCount="indefinite" begin="-0.5s"/></circle>
+    <circle cx="320"  cy="50"  r="0.7"><animate attributeName="opacity" values="0.2;0.8;0.2" dur="4s" repeatCount="indefinite" begin="-2s"/></circle>
+    <circle cx="420"  cy="100" r="0.8"><animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="-1.5s"/></circle>
+    <circle cx="540"  cy="60"  r="0.7"><animate attributeName="opacity" values="0.2;0.9;0.2" dur="4.5s" repeatCount="indefinite" begin="-1s"/></circle>
+    <circle cx="720"  cy="40"  r="0.8"><animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="-0.8s"/></circle>
+    <circle cx="820"  cy="100" r="0.9"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.5s" repeatCount="indefinite" begin="-2.5s"/></circle>
+    <circle cx="920"  cy="60"  r="0.6"><animate attributeName="opacity" values="0.2;0.8;0.2" dur="4s" repeatCount="indefinite" begin="-1.2s"/></circle>
+    <circle cx="1040" cy="120" r="0.8"><animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="-0.6s"/></circle>
+    <circle cx="1140" cy="80"  r="0.7"><animate attributeName="opacity" values="0.2;0.9;0.2" dur="4s" repeatCount="indefinite" begin="-2.2s"/></circle>
+    <circle cx="1220" cy="50"  r="0.8"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.5s" repeatCount="indefinite" begin="-1.4s"/></circle>
+    <circle cx="50"   cy="680" r="0.7"><animate attributeName="opacity" values="0.2;0.8;0.2" dur="3s" repeatCount="indefinite" begin="-0.4s"/></circle>
+    <circle cx="180"  cy="720" r="0.8"><animate attributeName="opacity" values="0.2;1;0.2" dur="4s" repeatCount="indefinite" begin="-1.6s"/></circle>
+    <circle cx="320"  cy="680" r="0.6"><animate attributeName="opacity" values="0.2;0.9;0.2" dur="3.5s" repeatCount="indefinite" begin="-2.8s"/></circle>
+    <circle cx="1000" cy="700" r="0.8"><animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="-0.2s"/></circle>
+    <circle cx="1120" cy="660" r="0.7"><animate attributeName="opacity" values="0.2;0.9;0.2" dur="4s" repeatCount="indefinite" begin="-1.8s"/></circle>
+    <circle cx="1220" cy="720" r="0.8"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.5s" repeatCount="indefinite" begin="-2.4s"/></circle>
+  </g>
+
+  <!-- Distant cosmic dust -->
+  <g fill="#4FC3F7" opacity="0.4">
+    <circle r="1">
+      <animateMotion path="M -20,300 C 200,200 400,500 1300,250" dur="22s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.6;0" dur="22s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="1.2">
+      <animateMotion path="M 1300,500 C 1000,300 400,600 -20,400" dur="26s" repeatCount="indefinite" begin="-7s"/>
+      <animate attributeName="opacity" values="0;0.6;0" dur="26s" repeatCount="indefinite" begin="-7s"/>
+    </circle>
+  </g>
+
+  <!-- ════════════ SECTION TITLE ════════════ -->
+  <text x="640" y="80" text-anchor="middle" class="mono"
+        font-size="11" font-weight="500" fill="#64FFDA" letter-spacing="14">
+    GLOBAL CONNECTIVITY &#x2022; CAIRO HUB
+  </text>
+
+  <g filter="url(#cinemaGlow)">
+    <text x="640" y="135" text-anchor="middle" class="ita"
+          font-size="56" fill="url(#titleGrad)" letter-spacing="22">
+      WORLDWIDE REACH
+    </text>
+  </g>
+
+  <text x="640" y="170" text-anchor="middle" class="cor" font-style="italic"
+        font-size="20" font-weight="300" fill="#CCD6F6" letter-spacing="3" opacity="0.9">
+    A network of ideas converging in the heart of the Nile
+  </text>
+
+  <!-- Decorative ornament under title -->
+  <g transform="translate(640, 195)" opacity="0.7">
+    <line x1="-180" y1="0" x2="-15" y2="0" stroke="#64FFDA" stroke-width="0.5"/>
+    <line x1="15"   y1="0" x2="180" y2="0" stroke="#64FFDA" stroke-width="0.5"/>
+    <circle cx="0" cy="0" r="3" fill="none" stroke="#64FFDA" stroke-width="1">
+      <animate attributeName="r" values="3;5;3" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="1.2" fill="#64FFDA"/>
+  </g>
+
+  <!-- ════════════ LEFT STATS PANEL ════════════ -->
+  <g transform="translate(40, 260)">
+    <!-- Card 1: REPOS -->
+    <g transform="translate(0, 0)">
+      <use href="#statCard" width="220" height="90"/>
+      <text x="110" y="38" text-anchor="middle" class="cin" font-size="32" font-weight="700" fill="#64FFDA" filter="url(#softGlow)">
+        39+
+      </text>
+      <text x="110" y="62" text-anchor="middle" class="mono" font-size="10" font-weight="500" fill="#8892B0" letter-spacing="6">
+        PUBLIC REPOSITORIES
+      </text>
+      <line x1="35" y1="74" x2="185" y2="74" stroke="#64FFDA" stroke-width="0.5" opacity="0.3"/>
+    </g>
+    <!-- Card 2: PROJECTS -->
+    <g transform="translate(0, 110)">
+      <use href="#statCard" width="220" height="90"/>
+      <text x="110" y="38" text-anchor="middle" class="cin" font-size="32" font-weight="700" fill="#4FC3F7" filter="url(#softGlow)">
+        12
+      </text>
+      <text x="110" y="62" text-anchor="middle" class="mono" font-size="10" font-weight="500" fill="#8892B0" letter-spacing="6">
+        ACTIVE PROJECTS
+      </text>
+      <line x1="35" y1="74" x2="185" y2="74" stroke="#4FC3F7" stroke-width="0.5" opacity="0.3"/>
+    </g>
+    <!-- Card 3: LANGUAGES -->
+    <g transform="translate(0, 220)">
+      <use href="#statCard" width="220" height="90"/>
+      <text x="110" y="38" text-anchor="middle" class="cin" font-size="32" font-weight="700" fill="#7FFFE0" filter="url(#softGlow)">
+        08
+      </text>
+      <text x="110" y="62" text-anchor="middle" class="mono" font-size="10" font-weight="500" fill="#8892B0" letter-spacing="6">
+        LANGUAGES MASTERED
+      </text>
+      <line x1="35" y1="74" x2="185" y2="74" stroke="#7FFFE0" stroke-width="0.5" opacity="0.3"/>
+    </g>
+    <!-- Card 4: YEARS -->
+    <g transform="translate(0, 330)">
+      <use href="#statCard" width="220" height="90"/>
+      <text x="110" y="38" text-anchor="middle" class="cin" font-size="32" font-weight="700" fill="#1E88E5" filter="url(#softGlow)">
+        24/7
+      </text>
+      <text x="110" y="62" text-anchor="middle" class="mono" font-size="10" font-weight="500" fill="#8892B0" letter-spacing="6">
+        ALWAYS BUILDING
+      </text>
+      <line x1="35" y1="74" x2="185" y2="74" stroke="#1E88E5" stroke-width="0.5" opacity="0.3"/>
+    </g>
+  </g>
+
+  <!-- ════════════ RIGHT STATS PANEL ════════════ -->
+  <g transform="translate(1020, 260)">
+    <!-- Card 1: STARS -->
+    <g transform="translate(0, 0)">
+      <use href="#statCard" width="220" height="90"/>
+      <text x="110" y="38" text-anchor="middle" class="cin" font-size="32" font-weight="700" fill="#FFD700" filter="url(#softGlow)">
+        &#9733;
+      </text>
+      <text x="110" y="62" text-anchor="middle" class="mono" font-size="10" font-weight="500" fill="#8892B0" letter-spacing="6">
+        GROWING STARS
+      </text>
+      <line x1="35" y1="74" x2="185" y2="74" stroke="#FFD700" stroke-width="0.5" opacity="0.3"/>
+    </g>
+    <!-- Card 2: FOLLOWERS -->
+    <g transform="translate(0, 110)">
+      <use href="#statCard" width="220" height="90"/>
+      <text x="110" y="38" text-anchor="middle" class="cin" font-size="32" font-weight="700" fill="#64FFDA" filter="url(#softGlow)">
+        3+
+      </text>
+      <text x="110" y="62" text-anchor="middle" class="mono" font-size="10" font-weight="500" fill="#8892B0" letter-spacing="6">
+        FOLLOWERS &amp; GROWING
+      </text>
+      <line x1="35" y1="74" x2="185" y2="74" stroke="#64FFDA" stroke-width="0.5" opacity="0.3"/>
+    </g>
+    <!-- Card 3: STACK -->
+    <g transform="translate(0, 220)">
+      <use href="#statCard" width="220" height="90"/>
+      <text x="110" y="38" text-anchor="middle" class="cin" font-size="22" font-weight="700" fill="#4FC3F7" filter="url(#softGlow)">
+        FULL-STACK
+      </text>
+      <text x="110" y="62" text-anchor="middle" class="mono" font-size="10" font-weight="500" fill="#8892B0" letter-spacing="6">
+        LARAVEL · NEXT.JS
+      </text>
+      <line x1="35" y1="74" x2="185" y2="74" stroke="#4FC3F7" stroke-width="0.5" opacity="0.3"/>
+    </g>
+    <!-- Card 4: LOCATION -->
+    <g transform="translate(0, 330)">
+      <use href="#statCard" width="220" height="90"/>
+      <text x="110" y="38" text-anchor="middle" class="cin" font-size="22" font-weight="700" fill="#FF6B9D" filter="url(#softGlow)">
+        EGYPT
+      </text>
+      <text x="110" y="62" text-anchor="middle" class="mono" font-size="10" font-weight="500" fill="#8892B0" letter-spacing="6">
+        30.04&#176;N · 31.24&#176;E
+      </text>
+      <line x1="35" y1="74" x2="185" y2="74" stroke="#FF6B9D" stroke-width="0.5" opacity="0.3"/>
+    </g>
+  </g>
+
+  <!-- ════════════ ATMOSPHERIC HALO ════════════ -->
+  <circle cx="640" cy="400" r="270" fill="url(#atmosGrad)" opacity="0.85"/>
+  <circle cx="640" cy="400" r="215" fill="none" stroke="#64FFDA" stroke-width="0.6" opacity="0.5">
+    <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="640" cy="400" r="208" fill="none" stroke="#4FC3F7" stroke-width="0.4" opacity="0.3"/>
+
+  <!-- ════════════ GLOBE BODY ════════════ -->
+  <circle cx="640" cy="400" r="200" fill="url(#globeBody)"/>
+
+  <!-- Subtle inner shadow for sphere depth -->
+  <circle cx="640" cy="400" r="200" fill="none" stroke="#020817" stroke-width="2" opacity="0.4"/>
+
+  <!-- ════════════ LAND MASSES (rotating horizontally) ════════════ -->
+  <g clip-path="url(#globeArea)">
+    <g>
+      <use href="#continents" x="440" y="200" width="420" height="400"/>
+      <use href="#continents" x="860" y="200" width="420" height="400"/>
+      <use href="#continents" x="20"  y="200" width="420" height="400"/>
+      <animateTransform attributeName="transform" type="translate"
+                       values="0,0;-420,0" dur="60s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- ════════════ STATIC WIREFRAME ════════════ -->
+  <g clip-path="url(#globeArea)" fill="none" stroke="#64FFDA" stroke-width="0.4" opacity="0.35">
+    <!-- Latitudes (horizontal ellipses) -->
+    <ellipse cx="640" cy="400" rx="200" ry="40"/>
+    <ellipse cx="640" cy="400" rx="200" ry="100"/>
+    <ellipse cx="640" cy="400" rx="200" ry="160"/>
+    <ellipse cx="640" cy="400" rx="200" ry="200"/>
+    <!-- Longitudes (vertical ellipses with different rx) -->
+    <ellipse cx="640" cy="400" rx="40"  ry="200"/>
+    <ellipse cx="640" cy="400" rx="100" ry="200"/>
+    <ellipse cx="640" cy="400" rx="160" ry="200"/>
+  </g>
+
+  <!-- Highlighted equator (brighter) -->
+  <line x1="440" y1="400" x2="840" y2="400" stroke="#64FFDA" stroke-width="0.8" opacity="0.6" clip-path="url(#globeArea)"/>
+  <!-- Highlighted prime meridian -->
+  <line x1="640" y1="200" x2="640" y2="600" stroke="#64FFDA" stroke-width="0.4" opacity="0.4" clip-path="url(#globeArea)"/>
+
+  <!-- ════════════ ORBITAL RINGS (decorative around sphere) ════════════ -->
+  <g fill="none" stroke="#64FFDA" stroke-width="0.6" opacity="0.35">
+    <ellipse cx="640" cy="400" rx="230" ry="60" transform="rotate(-15 640 400)">
+      <animateTransform attributeName="transform" type="rotate" from="-15 640 400" to="345 640 400" dur="40s" repeatCount="indefinite" additive="sum"/>
+    </ellipse>
+  </g>
+  <g fill="none" stroke="#4FC3F7" stroke-width="0.5" opacity="0.3">
+    <ellipse cx="640" cy="400" rx="245" ry="70" transform="rotate(20 640 400)">
+      <animateTransform attributeName="transform" type="rotate" from="20 640 400" to="-340 640 400" dur="50s" repeatCount="indefinite" additive="sum"/>
+    </ellipse>
+  </g>
+
+  <!-- Orbital ring satellite dots -->
+  <circle r="3" fill="#64FFDA" filter="url(#softGlow)">
+    <animateMotion dur="40s" repeatCount="indefinite">
+      <mpath href="#orbitPath1"/>
+    </animateMotion>
+  </circle>
+  <defs>
+    <path id="orbitPath1" d="M 640,340 A 230,60 -15 1 1 640,460 A 230,60 -15 1 1 640,340 Z" fill="none"/>
+  </defs>
+
+  <!-- ════════════ CITY MARKERS ════════════ -->
+
+  <!-- London (~0°E, 51°N) -->
+  <g transform="translate(595, 207)">
+    <circle r="6" fill="#64FFDA" opacity="0.25">
+      <animate attributeName="r" values="6;10;6" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="3" fill="#64FFDA"/>
+    <circle r="1.5" fill="#0A192F"/>
+    <g transform="translate(-12, -10)">
+      <text text-anchor="end" class="mono" font-size="9" font-weight="500" fill="#CCD6F6" letter-spacing="2">LONDON</text>
+    </g>
+  </g>
+
+  <!-- New York (~74°W, 40°N) -->
+  <g transform="translate(486, 235)">
+    <circle r="6" fill="#64FFDA" opacity="0.25">
+      <animate attributeName="r" values="6;10;6" dur="2.5s" repeatCount="indefinite" begin="-0.4s"/>
+    </circle>
+    <circle r="3" fill="#64FFDA"/>
+    <circle r="1.5" fill="#0A192F"/>
+    <g transform="translate(-12, -10)">
+      <text text-anchor="end" class="mono" font-size="9" font-weight="500" fill="#CCD6F6" letter-spacing="2">NEW YORK</text>
+    </g>
+  </g>
+
+  <!-- Moscow (~37°E, 55°N) -->
+  <g transform="translate(712, 198)">
+    <circle r="6" fill="#64FFDA" opacity="0.25">
+      <animate attributeName="r" values="6;10;6" dur="2.5s" repeatCount="indefinite" begin="-0.8s"/>
+    </circle>
+    <circle r="3" fill="#64FFDA"/>
+    <circle r="1.5" fill="#0A192F"/>
+    <g transform="translate(12, -10)">
+      <text class="mono" font-size="9" font-weight="500" fill="#CCD6F6" letter-spacing="2">MOSCOW</text>
+    </g>
+  </g>
+
+  <!-- Mumbai (~72°E, 19°N) -->
+  <g transform="translate(820, 305)">
+    <circle r="6" fill="#64FFDA" opacity="0.25">
+      <animate attributeName="r" values="6;10;6" dur="2.5s" repeatCount="indefinite" begin="-1.2s"/>
+    </circle>
+    <circle r="3" fill="#64FFDA"/>
+    <circle r="1.5" fill="#0A192F"/>
+    <g transform="translate(12, 5)">
+      <text class="mono" font-size="9" font-weight="500" fill="#CCD6F6" letter-spacing="2">MUMBAI</text>
+    </g>
+  </g>
+
+  <!-- Cape Town (~18°E, 34°S) -->
+  <g transform="translate(694, 510)">
+    <circle r="6" fill="#64FFDA" opacity="0.25">
+      <animate attributeName="r" values="6;10;6" dur="2.5s" repeatCount="indefinite" begin="-1.6s"/>
+    </circle>
+    <circle r="3" fill="#64FFDA"/>
+    <circle r="1.5" fill="#0A192F"/>
+    <g transform="translate(12, 5)">
+      <text class="mono" font-size="9" font-weight="500" fill="#CCD6F6" letter-spacing="2">CAPE TOWN</text>
+    </g>
+  </g>
+
+  <!-- Rio de Janeiro (~43°W, 23°S) -->
+  <g transform="translate(508, 485)">
+    <circle r="6" fill="#64FFDA" opacity="0.25">
+      <animate attributeName="r" values="6;10;6" dur="2.5s" repeatCount="indefinite" begin="-2s"/>
+    </circle>
+    <circle r="3" fill="#64FFDA"/>
+    <circle r="1.5" fill="#0A192F"/>
+    <g transform="translate(-12, 8)">
+      <text text-anchor="end" class="mono" font-size="9" font-weight="500" fill="#CCD6F6" letter-spacing="2">RIO</text>
+    </g>
+  </g>
+
+  <!-- Sydney (back-side, shown faded as it's on the limb) -->
+  <g transform="translate(845, 415)" opacity="0.5">
+    <circle r="4" fill="#64FFDA" opacity="0.2">
+      <animate attributeName="r" values="4;7;4" dur="2.5s" repeatCount="indefinite" begin="-2.4s"/>
+    </circle>
+    <circle r="2.5" fill="#64FFDA"/>
+    <g transform="translate(12, 3)">
+      <text class="mono" font-size="9" font-weight="500" fill="#CCD6F6" letter-spacing="2" opacity="0.7">SYDNEY</text>
+    </g>
+  </g>
+
+  <!-- ════════════ CONNECTION ARCS (city → Egypt) ════════════ -->
+  <g fill="none" stroke-width="1.5" opacity="0.7">
+    <!-- London → Egypt -->
+    <path d="M 595,207 Q 680,160 734,300" stroke="url(#arcGrad)" filter="url(#softGlow)">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <!-- NYC → Egypt -->
+    <path d="M 486,235 Q 600,140 734,300" stroke="url(#arcGrad)" filter="url(#softGlow)">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite" begin="-0.5s"/>
+    </path>
+    <!-- Moscow → Egypt -->
+    <path d="M 712,198 Q 760,220 734,300" stroke="url(#arcGrad)" filter="url(#softGlow)">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite" begin="-1s"/>
+    </path>
+    <!-- Mumbai → Egypt -->
+    <path d="M 820,305 Q 800,250 734,300" stroke="url(#arcGrad)" filter="url(#softGlow)">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite" begin="-1.5s"/>
+    </path>
+    <!-- Cape Town → Egypt -->
+    <path d="M 694,510 Q 670,420 734,300" stroke="url(#arcGrad)" filter="url(#softGlow)">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite" begin="-2s"/>
+    </path>
+    <!-- Rio → Egypt -->
+    <path d="M 508,485 Q 580,420 734,300" stroke="url(#arcGrad)" filter="url(#softGlow)">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite" begin="-2.5s"/>
+    </path>
+  </g>
+
+  <!-- ════════════ DATA PACKETS (traveling toward Egypt) ════════════ -->
+  <g>
+    <!-- From London -->
+    <circle r="3" fill="#64FFDA" filter="url(#softGlow)">
+      <animateMotion path="M 595,207 Q 680,160 734,300" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="2" fill="#FFFFFF">
+      <animateMotion path="M 595,207 Q 680,160 734,300" dur="3s" repeatCount="indefinite" begin="-1.5s"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="3s" repeatCount="indefinite" begin="-1.5s"/>
+    </circle>
+    <!-- From NYC -->
+    <circle r="3" fill="#4FC3F7" filter="url(#softGlow)">
+      <animateMotion path="M 486,235 Q 600,140 734,300" dur="3.5s" repeatCount="indefinite" begin="-0.3s"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="3.5s" repeatCount="indefinite" begin="-0.3s"/>
+    </circle>
+    <circle r="2" fill="#FFFFFF">
+      <animateMotion path="M 486,235 Q 600,140 734,300" dur="3.5s" repeatCount="indefinite" begin="-1.8s"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="3.5s" repeatCount="indefinite" begin="-1.8s"/>
+    </circle>
+    <!-- From Moscow -->
+    <circle r="3" fill="#7FFFE0" filter="url(#softGlow)">
+      <animateMotion path="M 712,198 Q 760,220 734,300" dur="2.5s" repeatCount="indefinite" begin="-0.7s"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="2.5s" repeatCount="indefinite" begin="-0.7s"/>
+    </circle>
+    <!-- From Mumbai -->
+    <circle r="3" fill="#64FFDA" filter="url(#softGlow)">
+      <animateMotion path="M 820,305 Q 800,250 734,300" dur="2.8s" repeatCount="indefinite" begin="-1s"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="2.8s" repeatCount="indefinite" begin="-1s"/>
+    </circle>
+    <!-- From Cape Town -->
+    <circle r="3" fill="#4FC3F7" filter="url(#softGlow)">
+      <animateMotion path="M 694,510 Q 670,420 734,300" dur="3.2s" repeatCount="indefinite" begin="-1.4s"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="3.2s" repeatCount="indefinite" begin="-1.4s"/>
+    </circle>
+    <!-- From Rio -->
+    <circle r="3" fill="#7FFFE0" filter="url(#softGlow)">
+      <animateMotion path="M 508,485 Q 580,420 734,300" dur="3.6s" repeatCount="indefinite" begin="-1.8s"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="3.6s" repeatCount="indefinite" begin="-1.8s"/>
+    </circle>
+  </g>
+
+  <!-- ════════════ EGYPT MARKER (focal point) ════════════ -->
+  <g transform="translate(734, 300)">
+    <!-- Outermost expanding ring -->
+    <circle r="6" fill="none" stroke="#FF6B9D" stroke-width="1.5" opacity="0">
+      <animate attributeName="r" values="6;40;6" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.9;0;0.9" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="6" fill="none" stroke="#FF6B9D" stroke-width="1" opacity="0">
+      <animate attributeName="r" values="6;30;6" dur="3s" repeatCount="indefinite" begin="-1s"/>
+      <animate attributeName="opacity" values="0.7;0;0.7" dur="3s" repeatCount="indefinite" begin="-1s"/>
+    </circle>
+    <circle r="6" fill="none" stroke="#FF6B9D" stroke-width="0.8" opacity="0">
+      <animate attributeName="r" values="6;22;6" dur="3s" repeatCount="indefinite" begin="-2s"/>
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="3s" repeatCount="indefinite" begin="-2s"/>
+    </circle>
+
+    <!-- Glowing core -->
+    <circle r="9" fill="#FF6B9D" opacity="0.3" filter="url(#egyptGlow)">
+      <animate attributeName="r" values="9;13;9" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="5" fill="#FF6B9D" filter="url(#egyptGlow)"/>
+    <circle r="2" fill="#FFFFFF"/>
+
+    <!-- Pin label (rounded chip) -->
+    <g transform="translate(15, -22)">
+      <rect x="0" y="0" width="105" height="30" rx="15" ry="15"
+            fill="#0A192F" stroke="#FF6B9D" stroke-width="1.2" opacity="0.95">
+        <animate attributeName="opacity" values="0.95;1;0.95" dur="2s" repeatCount="indefinite"/>
+      </rect>
+      <text x="52" y="14" text-anchor="middle" class="mono"
+            font-size="9" font-weight="700" fill="#FF6B9D" letter-spacing="2">
+        EGYPT · CAIRO
+      </text>
+      <text x="52" y="24" text-anchor="middle" class="mono"
+            font-size="7" fill="#CCD6F6" letter-spacing="1.5">
+        30.04&#176;N · 31.24&#176;E
+      </text>
+    </g>
+
+    <!-- Connector line from pin to chip -->
+    <line x1="0" y1="0" x2="15" y2="-15" stroke="#FF6B9D" stroke-width="1" opacity="0.6"/>
+  </g>
+
+  <!-- ════════════ BOTTOM CAPTION ════════════ -->
+  <g transform="translate(640, 690)">
+    <text text-anchor="middle" class="cor" font-style="italic"
+          font-size="18" font-weight="300" fill="#CCD6F6" letter-spacing="3">
+      Six continents &#x2022; one developer &#x2022; built from the heart of Egypt
+    </text>
+  </g>
+
+  <!-- Corner ornaments (rounded) -->
+  <g stroke="#64FFDA" stroke-width="1.2" fill="none" opacity="0.6">
+    <path d="M 25,30 Q 25,25 30,25 L 60,25" stroke-linecap="round"/>
+    <path d="M 25,30 L 25,60" stroke-linecap="round"/>
+    <path d="M 1255,30 Q 1255,25 1250,25 L 1220,25" stroke-linecap="round"/>
+    <path d="M 1255,30 L 1255,60" stroke-linecap="round"/>
+    <path d="M 25,730 Q 25,735 30,735 L 60,735" stroke-linecap="round"/>
+    <path d="M 25,730 L 25,700" stroke-linecap="round"/>
+    <path d="M 1255,730 Q 1255,735 1250,735 L 1220,735" stroke-linecap="round"/>
+    <path d="M 1255,730 L 1255,700" stroke-linecap="round"/>
+  </g>
+</svg>

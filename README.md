@@ -1,24 +1,23 @@
 <!-- ════════════════════════════════════════════════════════════════ -->
-<!--    MOHAMED BADR — DIGITAL PORTFOLIO                              -->
-<!--    Theme · Deep Navy · Cyan Holographic · Cinematic              -->
-<!--    Typography · Cinzel · Cormorant Garamond · Fira Code          -->
+<!--    MOHAMED BADR · DIGITAL PORTFOLIO                              -->
+<!--    Theme · Deep Navy · Cyan Aurora · Soft Curves                 -->
+<!--    Type  · Italiana · Cinzel · Cormorant Garamond · JetBrains    -->
 <!-- ════════════════════════════════════════════════════════════════ -->
 
 <!-- ─── HERO ────────────────────────────────────────────────────── -->
 <a href="https://github.com/cBadr">
-  <img src="./assets/hero.svg" alt="Mohamed Badr — Full-Stack Developer · SaaS Architect" width="100%"/>
+  <img src="./assets/hero.svg" alt="Mohamed Badr · Full-Stack Developer · SaaS Architect" width="100%"/>
 </a>
 
 <!-- ─── TYPING ANIMATION ────────────────────────────────────────── -->
 <div align="center">
 
 <a href="https://github.com/cBadr">
-  <img src="https://readme-typing-svg.demolab.com?font=Cormorant+Garamond&weight=300&italic=true&size=30&duration=3000&pause=600&color=64FFDA&center=true&vCenter=true&multiline=true&width=900&height=80&lines=Welcome+to+my+digital+universe;Where+cool+code+meets+warm+ideas;Crafting+SaaS+%E2%80%A2+Designing+experiences" alt="Typing animation"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Cormorant+Garamond&weight=300&italic=true&size=32&duration=3000&pause=600&color=64FFDA&center=true&vCenter=true&multiline=true&width=900&height=90&lines=Welcome+to+my+digital+universe;Where+cool+code+meets+warm+ideas;Crafting+SaaS+%E2%80%A2+Connecting+continents" alt="Typing animation"/>
 </a>
 
-<br/><br/>
+<br/>
 
-<!-- ─── METADATA BADGES ─────────────────────────────────────────── -->
 <img src="https://komarev.com/ghpvc/?username=cBadr&label=PROFILE+VIEWS&color=0A192F&style=for-the-badge&labelColor=64FFDA" alt="Profile views"/>
 <img src="https://img.shields.io/github/followers/cBadr?label=FOLLOWERS&style=for-the-badge&color=0A192F&labelColor=64FFDA&logo=github&logoColor=0A192F" alt="Followers"/>
 <img src="https://img.shields.io/github/stars/cBadr?label=STARS&style=for-the-badge&color=0A192F&labelColor=64FFDA&logo=starship&logoColor=0A192F" alt="Stars"/>
@@ -26,14 +25,35 @@
 
 </div>
 
-<!-- ─── DIVIDER ─────────────────────────────────────────────────── -->
 <img src="./assets/divider.svg" width="100%" alt=""/>
 
-<!-- ─── §01 · ABOUT ─────────────────────────────────────────────── -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- ─── §01 · GLOBAL REACH (Earth Globe centerpiece) ────────────── -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
 <div align="center">
   <h2>
-    <kbd>&nbsp;◇&nbsp;</kbd>&nbsp;&nbsp;<samp>§ 01 · ABOUT</samp>&nbsp;&nbsp;<kbd>&nbsp;◇&nbsp;</kbd>
+    <samp>&nbsp;§ 01 · WORLDWIDE REACH&nbsp;</samp>
   </h2>
+  <i>A rotating world · six continents · all roads lead to Cairo</i>
+</div>
+
+<br/>
+
+<a href="https://t.me/Idlexaz">
+  <img src="./assets/globe.svg" alt="3D rotating Earth globe with communication threads converging at Cairo, Egypt" width="100%"/>
+</a>
+
+<br/>
+
+<div align="center">
+  <sub><i>Every line you see is a connection · every pulse, a heartbeat of activity · the globe rotates in real time</i></sub>
+</div>
+
+<img src="./assets/divider.svg" width="100%" alt=""/>
+
+<!-- ─── §02 · ABOUT ─────────────────────────────────────────────── -->
+<div align="center">
+  <h2><samp>&nbsp;§ 02 · ABOUT THE CRAFTSMAN&nbsp;</samp></h2>
   <i>The architect behind the code</i>
 </div>
 
@@ -48,7 +68,7 @@
     name:        "Mohamed Badr"
     alias:       "cBadr"
     role:        "Full-Stack Developer"
-    philosophy:  "craft.products.that.matter()"
+    philosophy:  "build slowly · ship boldly · craft endlessly"
 
 ~ stack:
     backend:     [Laravel, PHP, Node.js, Supabase]
@@ -64,12 +84,12 @@
 ~ reach:
     web:         "orcax.click"
     telegram:    "@Idlexaz"   # primary channel
+    location:    "Cairo · Egypt · 30.04°N · 31.24°E"
 ```
 
 </td>
 <td width="45%" valign="middle" align="center">
 
-<!-- Snake animation - eats contribution dots -->
 <img src="https://raw.githubusercontent.com/cBadr/cBadr/output/snake-dark.svg" alt="Snake animation eating contributions" width="100%"/>
 
 <br/>
@@ -80,14 +100,11 @@
 </tr>
 </table>
 
-<!-- ─── DIVIDER ─────────────────────────────────────────────────── -->
 <img src="./assets/divider.svg" width="100%" alt=""/>
 
-<!-- ─── §02 · TELEGRAM CTA (cinematic banner) ───────────────────── -->
+<!-- ─── §03 · TELEGRAM ──────────────────────────────────────────── -->
 <div align="center">
-  <h2>
-    <kbd>&nbsp;◆&nbsp;</kbd>&nbsp;&nbsp;<samp>§ 02 · DIRECT LINE</samp>&nbsp;&nbsp;<kbd>&nbsp;◆&nbsp;</kbd>
-  </h2>
+  <h2><samp>&nbsp;§ 03 · DIRECT LINE&nbsp;</samp></h2>
   <i>One tap · zero friction</i>
 </div>
 
@@ -97,14 +114,11 @@
   <img src="./assets/telegram-cta.svg" alt="Open Telegram → @Idlexaz" width="100%"/>
 </a>
 
-<!-- ─── DIVIDER ─────────────────────────────────────────────────── -->
 <img src="./assets/divider.svg" width="100%" alt=""/>
 
-<!-- ─── §03 · TECH STACK ────────────────────────────────────────── -->
+<!-- ─── §04 · TECH STACK ────────────────────────────────────────── -->
 <div align="center">
-  <h2>
-    <kbd>&nbsp;❖&nbsp;</kbd>&nbsp;&nbsp;<samp>§ 03 · CRAFTSMANSHIP</samp>&nbsp;&nbsp;<kbd>&nbsp;❖&nbsp;</kbd>
-  </h2>
+  <h2><samp>&nbsp;§ 04 · CRAFTSMANSHIP&nbsp;</samp></h2>
   <i>Tools forged for elegance &amp; velocity</i>
 </div>
 
@@ -164,14 +178,11 @@
 
 </div>
 
-<!-- ─── DIVIDER ─────────────────────────────────────────────────── -->
 <img src="./assets/divider.svg" width="100%" alt=""/>
 
-<!-- ─── §04 · FEATURED PROJECTS ─────────────────────────────────── -->
+<!-- ─── §05 · SELECTED WORK ─────────────────────────────────────── -->
 <div align="center">
-  <h2>
-    <kbd>&nbsp;✦&nbsp;</kbd>&nbsp;&nbsp;<samp>§ 04 · SELECTED WORK</samp>&nbsp;&nbsp;<kbd>&nbsp;✦&nbsp;</kbd>
-  </h2>
+  <h2><samp>&nbsp;§ 05 · SELECTED WORK&nbsp;</samp></h2>
   <i>Six projects worth your attention</i>
 </div>
 
@@ -196,14 +207,11 @@
 
 </div>
 
-<!-- ─── DIVIDER ─────────────────────────────────────────────────── -->
 <img src="./assets/divider.svg" width="100%" alt=""/>
 
-<!-- ─── §05 · 3D CONTRIBUTIONS ──────────────────────────────────── -->
+<!-- ─── §06 · DIMENSION (3D contributions) ──────────────────────── -->
 <div align="center">
-  <h2>
-    <kbd>&nbsp;⬥&nbsp;</kbd>&nbsp;&nbsp;<samp>§ 05 · DIMENSION</samp>&nbsp;&nbsp;<kbd>&nbsp;⬥&nbsp;</kbd>
-  </h2>
+  <h2><samp>&nbsp;§ 06 · DIMENSION&nbsp;</samp></h2>
   <i>A year of commits rendered in three dimensions</i>
 </div>
 
@@ -221,14 +229,11 @@
 
 </div>
 
-<!-- ─── DIVIDER ─────────────────────────────────────────────────── -->
 <img src="./assets/divider.svg" width="100%" alt=""/>
 
-<!-- ─── §06 · STATS ─────────────────────────────────────────────── -->
+<!-- ─── §07 · ANALYTICS ─────────────────────────────────────────── -->
 <div align="center">
-  <h2>
-    <kbd>&nbsp;⟡&nbsp;</kbd>&nbsp;&nbsp;<samp>§ 06 · ANALYTICS</samp>&nbsp;&nbsp;<kbd>&nbsp;⟡&nbsp;</kbd>
-  </h2>
+  <h2><samp>&nbsp;§ 07 · ANALYTICS&nbsp;</samp></h2>
   <i>Numbers that tell a story</i>
 </div>
 
@@ -238,12 +243,12 @@
 
 <table>
 <tr>
-<td width="50%"><img src="https://github-readme-stats.vercel.app/api?username=cBadr&show_icons=true&count_private=true&include_all_commits=true&theme=tokyonight&bg_color=0A192F&title_color=64FFDA&text_color=CCD6F6&icon_color=1E88E5&border_color=1E3A5F&rank_icon=github" alt="GitHub Stats"/></td>
-<td width="50%"><img src="https://github-readme-streak-stats.herokuapp.com/?user=cBadr&theme=tokyonight&background=0A192F&ring=64FFDA&fire=1E88E5&currStreakLabel=64FFDA&sideLabels=CCD6F6&dates=8892B0&sideNums=64FFDA&currStreakNum=64FFDA&border=1E3A5F" alt="Streak"/></td>
+<td width="50%"><img src="https://github-readme-stats.vercel.app/api?username=cBadr&show_icons=true&count_private=true&include_all_commits=true&theme=tokyonight&bg_color=0A192F&title_color=64FFDA&text_color=CCD6F6&icon_color=1E88E5&border_color=1E3A5F&rank_icon=github&border_radius=24" alt="GitHub Stats"/></td>
+<td width="50%"><img src="https://github-readme-streak-stats.herokuapp.com/?user=cBadr&theme=tokyonight&background=0A192F&ring=64FFDA&fire=1E88E5&currStreakLabel=64FFDA&sideLabels=CCD6F6&dates=8892B0&sideNums=64FFDA&currStreakNum=64FFDA&border=1E3A5F&border_radius=24" alt="Streak"/></td>
 </tr>
 </table>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=cBadr&layout=compact&theme=tokyonight&bg_color=0A192F&title_color=64FFDA&text_color=CCD6F6&border_color=1E3A5F&langs_count=10" alt="Top languages" height="220"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=cBadr&layout=compact&theme=tokyonight&bg_color=0A192F&title_color=64FFDA&text_color=CCD6F6&border_color=1E3A5F&langs_count=10&border_radius=24" alt="Top languages" height="220"/>
 
 <br/><br/>
 
@@ -251,19 +256,16 @@
 
 <br/><br/>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=cBadr&theme=react-dark&bg_color=0A192F&color=64FFDA&line=1E88E5&point=64FFDA&area=true&area_color=1E3A5F&hide_border=false&custom_title=Contribution+Activity+%E2%80%94+Last+Year" width="100%" alt="Activity graph"/>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=cBadr&theme=react-dark&bg_color=0A192F&color=64FFDA&line=1E88E5&point=64FFDA&area=true&area_color=1E3A5F&hide_border=false&radius=24&custom_title=Contribution+Activity+%E2%80%94+Last+Year" width="100%" alt="Activity graph"/>
 
 </div>
 
-<!-- ─── DIVIDER ─────────────────────────────────────────────────── -->
 <img src="./assets/divider.svg" width="100%" alt=""/>
 
-<!-- ─── §07 · SUMMARY CARDS ─────────────────────────────────────── -->
+<!-- ─── §08 · PORTRAIT (summary cards) ──────────────────────────── -->
 <div align="center">
-  <h2>
-    <kbd>&nbsp;⬦&nbsp;</kbd>&nbsp;&nbsp;<samp>§ 07 · PORTRAIT</samp>&nbsp;&nbsp;<kbd>&nbsp;⬦&nbsp;</kbd>
-  </h2>
-  <i>Five facets of a developer&apos;s rhythm</i>
+  <h2><samp>&nbsp;§ 08 · PORTRAIT&nbsp;</samp></h2>
+  <i>Five facets of a developer's rhythm</i>
 </div>
 
 <br/>
@@ -288,14 +290,11 @@
 
 </div>
 
-<!-- ─── DIVIDER ─────────────────────────────────────────────────── -->
 <img src="./assets/divider.svg" width="100%" alt=""/>
 
-<!-- ─── §08 · AUTOMATION ────────────────────────────────────────── -->
+<!-- ─── §09 · LIVING DOCUMENT (automation) ──────────────────────── -->
 <div align="center">
-  <h2>
-    <kbd>&nbsp;⚙&nbsp;</kbd>&nbsp;&nbsp;<samp>§ 08 · LIVING DOCUMENT</samp>&nbsp;&nbsp;<kbd>&nbsp;⚙&nbsp;</kbd>
-  </h2>
+  <h2><samp>&nbsp;§ 09 · LIVING DOCUMENT&nbsp;</samp></h2>
   <i>This README breathes · three workflows keep it alive</i>
 </div>
 
@@ -306,17 +305,17 @@
 <table>
 <tr>
 <td align="center" width="33%">
-<a href="https://github.com/cBadr/cBadr/actions/workflows/snake.yml"><img src="https://img.shields.io/github/actions/workflow/status/cBadr/cBadr/snake.yml?branch=main&style=for-the-badge&label=%F0%9F%90%8D%20SNAKE&color=0A192F&labelColor=64FFDA" height="42"/></a>
+<a href="https://github.com/cBadr/cBadr/actions/workflows/snake.yml"><img src="https://img.shields.io/github/actions/workflow/status/cBadr/cBadr/snake.yml?branch=main&style=for-the-badge&label=SNAKE&color=0A192F&labelColor=64FFDA" height="38"/></a>
 <br/><br/>
 <sub><b>Every 12 hours</b><br/>Regenerates the snake animation<br/>eating contribution dots</sub>
 </td>
 <td align="center" width="33%">
-<a href="https://github.com/cBadr/cBadr/actions/workflows/3d-contrib.yml"><img src="https://img.shields.io/github/actions/workflow/status/cBadr/cBadr/3d-contrib.yml?branch=main&style=for-the-badge&label=%E2%AC%A5%203D&color=0A192F&labelColor=64FFDA" height="42"/></a>
+<a href="https://github.com/cBadr/cBadr/actions/workflows/3d-contrib.yml"><img src="https://img.shields.io/github/actions/workflow/status/cBadr/cBadr/3d-contrib.yml?branch=main&style=for-the-badge&label=3D&color=0A192F&labelColor=64FFDA" height="38"/></a>
 <br/><br/>
 <sub><b>Daily · 00:00 UTC</b><br/>Rebuilds the 3D contribution<br/>calendar with latest commits</sub>
 </td>
 <td align="center" width="33%">
-<a href="https://github.com/cBadr/cBadr/actions/workflows/profile-summary-cards.yml"><img src="https://img.shields.io/github/actions/workflow/status/cBadr/cBadr/profile-summary-cards.yml?branch=main&style=for-the-badge&label=%E2%9F%A1%20CARDS&color=0A192F&labelColor=64FFDA" height="42"/></a>
+<a href="https://github.com/cBadr/cBadr/actions/workflows/profile-summary-cards.yml"><img src="https://img.shields.io/github/actions/workflow/status/cBadr/cBadr/profile-summary-cards.yml?branch=main&style=for-the-badge&label=CARDS&color=0A192F&labelColor=64FFDA" height="38"/></a>
 <br/><br/>
 <sub><b>Daily · 00:00 UTC</b><br/>Refreshes profile summary<br/>statistics cards</sub>
 </td>
@@ -325,14 +324,11 @@
 
 </div>
 
-<!-- ─── DIVIDER ─────────────────────────────────────────────────── -->
 <img src="./assets/divider.svg" width="100%" alt=""/>
 
-<!-- ─── §09 · QUOTE ─────────────────────────────────────────────── -->
+<!-- ─── §10 · DAILY REFLECTION ──────────────────────────────────── -->
 <div align="center">
-  <h2>
-    <kbd>&nbsp;✧&nbsp;</kbd>&nbsp;&nbsp;<samp>§ 09 · DAILY REFLECTION</samp>&nbsp;&nbsp;<kbd>&nbsp;✧&nbsp;</kbd>
-  </h2>
+  <h2><samp>&nbsp;§ 10 · DAILY REFLECTION&nbsp;</samp></h2>
 </div>
 
 <br/>
@@ -341,14 +337,11 @@
   <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" alt="Daily quote"/>
 </div>
 
-<!-- ─── DIVIDER ─────────────────────────────────────────────────── -->
 <img src="./assets/divider.svg" width="100%" alt=""/>
 
-<!-- ─── §10 · CONTACT ───────────────────────────────────────────── -->
+<!-- ─── §11 · CONNECT ───────────────────────────────────────────── -->
 <div align="center">
-  <h2>
-    <kbd>&nbsp;◈&nbsp;</kbd>&nbsp;&nbsp;<samp>§ 10 · CONNECT</samp>&nbsp;&nbsp;<kbd>&nbsp;◈&nbsp;</kbd>
-  </h2>
+  <h2><samp>&nbsp;§ 11 · CONNECT&nbsp;</samp></h2>
   <i>Four doors · open round the clock</i>
 </div>
 
@@ -388,7 +381,7 @@
 <br/>
 
 <a href="https://t.me/Idlexaz">
-  <img src="https://readme-typing-svg.demolab.com?font=Cormorant+Garamond&italic=true&weight=500&size=26&duration=3000&pause=500&color=64FFDA&center=true&vCenter=true&width=700&height=50&lines=Got+an+idea+worth+building%3F;Tell+me+on+Telegram+%E2%9E%A4+%40Idlexaz;Open+for+freelance+%26+collaborations" alt="Contact CTA"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Cormorant+Garamond&italic=true&weight=500&size=28&duration=3000&pause=500&color=64FFDA&center=true&vCenter=true&width=720&height=55&lines=Got+an+idea+worth+building%3F;Tell+me+on+Telegram+%E2%9E%A4+%40Idlexaz;Open+for+freelance+%26+collaborations" alt="Contact CTA"/>
 </a>
 
 </div>

@@ -1,53 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 520" width="1280" height="520" role="img" aria-label="Mohamed Badr — Cinematic Hero">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 560" width="1280" height="560" role="img" aria-label="Mohamed Badr — elegant hero">
   <defs>
-    <!-- Luxury font import -->
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&amp;family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&amp;family=Fira+Code:wght@400;500&amp;display=swap');
-      .lux-title  { font-family: 'Cinzel', 'Trajan Pro', Georgia, serif; }
-      .lux-sub    { font-family: 'Cormorant Garamond', 'Garamond', Georgia, serif; }
-      .lux-mono   { font-family: 'Fira Code', 'Consolas', monospace; }
+      @import url('https://fonts.googleapis.com/css2?family=Italiana&amp;family=Cinzel:wght@500;700&amp;family=Cormorant+Garamond:ital,wght@0,400;1,300;1,500&amp;family=JetBrains+Mono:wght@300;500&amp;display=swap');
+      .ita  { font-family: 'Italiana', 'Trajan Pro', Georgia, serif; }
+      .cin  { font-family: 'Cinzel', 'Trajan Pro', Georgia, serif; }
+      .cor  { font-family: 'Cormorant Garamond', Garamond, Georgia, serif; }
+      .mono { font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace; }
     </style>
 
-    <!-- Cinematic radial background -->
-    <radialGradient id="bgRadial" cx="50%" cy="50%" r="75%">
+    <!-- Background: soft cinematic gradient -->
+    <radialGradient id="heroBg" cx="50%" cy="55%" r="80%">
       <stop offset="0%"  stop-color="#0F2D52"/>
-      <stop offset="50%" stop-color="#0A192F"/>
+      <stop offset="55%" stop-color="#0A192F"/>
       <stop offset="100%" stop-color="#020817"/>
     </radialGradient>
 
-    <!-- Title gradient -->
-    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <!-- Title gradient: morphs through cyan→sky→teal -->
+    <linearGradient id="heroTitleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%"   stop-color="#4FC3F7">
-        <animate attributeName="offset" values="0;0.2;0" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="offset" values="0;0.2;0" dur="10s" repeatCount="indefinite"/>
       </stop>
       <stop offset="30%"  stop-color="#64FFDA">
-        <animate attributeName="offset" values="0.3;0.5;0.3" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="offset" values="0.3;0.5;0.3" dur="10s" repeatCount="indefinite"/>
       </stop>
       <stop offset="70%"  stop-color="#7FFFE0">
-        <animate attributeName="offset" values="0.7;0.6;0.7" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="offset" values="0.7;0.6;0.7" dur="10s" repeatCount="indefinite"/>
       </stop>
       <stop offset="100%" stop-color="#1E88E5">
-        <animate attributeName="offset" values="1;0.8;1" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="offset" values="1;0.8;1" dur="10s" repeatCount="indefinite"/>
       </stop>
     </linearGradient>
 
-    <!-- Ornament gradient -->
-    <linearGradient id="ornamentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <!-- Ornament line gradient (fades at ends) -->
+    <linearGradient id="heroLine" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%"   stop-color="#64FFDA" stop-opacity="0"/>
-      <stop offset="50%"  stop-color="#64FFDA" stop-opacity="1"/>
+      <stop offset="50%"  stop-color="#64FFDA" stop-opacity="0.95"/>
       <stop offset="100%" stop-color="#64FFDA" stop-opacity="0"/>
     </linearGradient>
 
-    <!-- Multi-layer glow for cinematic luminosity -->
-    <filter id="cinemaGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="2.5" result="b1"/>
-      <feGaussianBlur stdDeviation="6"   result="b2" in="SourceGraphic"/>
-      <feGaussianBlur stdDeviation="14"  result="b3" in="SourceGraphic"/>
-      <feFlood flood-color="#64FFDA" flood-opacity="0.45" result="c1"/>
+    <!-- Soft glow filter -->
+    <filter id="heroGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b1"/>
+      <feGaussianBlur stdDeviation="9" in="SourceGraphic" result="b2"/>
+      <feGaussianBlur stdDeviation="18" in="SourceGraphic" result="b3"/>
+      <feFlood flood-color="#64FFDA" flood-opacity="0.55" result="c1"/>
       <feComposite in="c1" in2="b1" operator="in" result="g1"/>
       <feFlood flood-color="#1E88E5" flood-opacity="0.35" result="c2"/>
       <feComposite in="c2" in2="b2" operator="in" result="g2"/>
-      <feFlood flood-color="#4FC3F7" flood-opacity="0.20" result="c3"/>
+      <feFlood flood-color="#4FC3F7" flood-opacity="0.18" result="c3"/>
       <feComposite in="c3" in2="b3" operator="in" result="g3"/>
       <feMerge>
         <feMergeNode in="g3"/>
@@ -57,276 +57,216 @@
       </feMerge>
     </filter>
 
-    <!-- Soft halo -->
-    <filter id="softHalo" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3"/>
+    <!-- Subtle blur for halos -->
+    <filter id="heroHalo" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4"/>
       <feMerge>
         <feMergeNode/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
 
-    <!-- Chromatic aberration (holographic shimmer) -->
-    <filter id="chromaShift" x="-20%" y="-20%" width="140%" height="140%">
-      <feOffset in="SourceGraphic" dx="1.2" dy="0" result="r"/>
-      <feColorMatrix in="r" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="rOnly"/>
-      <feOffset in="SourceGraphic" dx="-1.2" dy="0" result="b"/>
-      <feColorMatrix in="b" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="bOnly"/>
-      <feBlend in="rOnly" in2="bOnly" mode="screen" result="rb"/>
-      <feBlend in="rb" in2="SourceGraphic" mode="normal"/>
-    </filter>
-
-    <!-- Subtle noise/grain -->
-    <filter id="grain" x="0%" y="0%" width="100%" height="100%">
-      <feTurbulence baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
-      <feColorMatrix values="0 0 0 0 0.4  0 0 0 0 0.9  0 0 0 0 1  0 0 0 0.03 0"/>
-    </filter>
-
-    <!-- Vignette mask -->
-    <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
-      <stop offset="60%"  stop-color="#000" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#000" stop-opacity="0.7"/>
+    <!-- Vignette mask for cinematic edges -->
+    <radialGradient id="heroVignette" cx="50%" cy="50%" r="75%">
+      <stop offset="65%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.55"/>
     </radialGradient>
-
-    <!-- Hexagonal grid pattern -->
-    <pattern id="hexGrid" width="60" height="52" patternUnits="userSpaceOnUse" patternTransform="scale(1.2)">
-      <polygon points="30,2 56,17 56,47 30,62 4,47 4,17"
-               fill="none" stroke="#1E3A5F" stroke-width="0.5" opacity="0.35"/>
-    </pattern>
-
-    <!-- Perspective floor lines path -->
-    <linearGradient id="floorGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"  stop-color="#64FFDA" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#64FFDA" stop-opacity="0.5"/>
-    </linearGradient>
   </defs>
 
-  <!-- ============ LAYER 1: cinematic background ============ -->
-  <rect width="1280" height="520" fill="url(#bgRadial)"/>
-  <rect width="1280" height="520" fill="url(#hexGrid)"/>
-  <rect width="1280" height="520" filter="url(#grain)" opacity="0.6"/>
+  <!-- ────── BACKGROUND ────── -->
+  <rect width="1280" height="560" fill="url(#heroBg)"/>
 
-  <!-- ============ LAYER 2: perspective floor (depth illusion) ============ -->
-  <g opacity="0.25" stroke="url(#floorGrad)" stroke-width="0.6" fill="none">
-    <line x1="640" y1="380" x2="0"    y2="520"/>
-    <line x1="640" y1="380" x2="160"  y2="520"/>
-    <line x1="640" y1="380" x2="320"  y2="520"/>
-    <line x1="640" y1="380" x2="480"  y2="520"/>
-    <line x1="640" y1="380" x2="640"  y2="520"/>
-    <line x1="640" y1="380" x2="800"  y2="520"/>
-    <line x1="640" y1="380" x2="960"  y2="520"/>
-    <line x1="640" y1="380" x2="1120" y2="520"/>
-    <line x1="640" y1="380" x2="1280" y2="520"/>
-    <!-- horizontal floor lines (parallax animated) -->
-    <line x1="0" y1="420" x2="1280" y2="420">
-      <animate attributeName="y1" values="420;460;420" dur="10s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="420;460;420" dur="10s" repeatCount="indefinite"/>
-    </line>
-    <line x1="0" y1="460" x2="1280" y2="460">
-      <animate attributeName="y1" values="460;510;460" dur="10s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="460;510;460" dur="10s" repeatCount="indefinite"/>
-    </line>
-    <line x1="0" y1="500" x2="1280" y2="500"/>
+  <!-- Subtle grain dots -->
+  <g fill="#64FFDA" opacity="0.15">
+    <circle cx="100" cy="80" r="0.8"/>
+    <circle cx="180" cy="130" r="0.6"/>
+    <circle cx="260" cy="60" r="0.7"/>
+    <circle cx="340" cy="100" r="0.6"/>
+    <circle cx="420" cy="50" r="0.8"/>
+    <circle cx="500" cy="90" r="0.6"/>
+    <circle cx="580" cy="120" r="0.7"/>
+    <circle cx="660" cy="70" r="0.8"/>
+    <circle cx="740" cy="40" r="0.6"/>
+    <circle cx="820" cy="110" r="0.7"/>
+    <circle cx="900" cy="90" r="0.8"/>
+    <circle cx="980" cy="60" r="0.6"/>
+    <circle cx="1060" cy="130" r="0.7"/>
+    <circle cx="1140" cy="80" r="0.8"/>
+    <circle cx="1220" cy="120" r="0.6"/>
+    <circle cx="100" cy="450" r="0.8"/>
+    <circle cx="250" cy="500" r="0.7"/>
+    <circle cx="400" cy="480" r="0.6"/>
+    <circle cx="550" cy="510" r="0.8"/>
+    <circle cx="700" cy="470" r="0.7"/>
+    <circle cx="850" cy="500" r="0.8"/>
+    <circle cx="1000" cy="480" r="0.6"/>
+    <circle cx="1150" cy="510" r="0.7"/>
   </g>
 
-  <!-- ============ LAYER 3: bokeh blurred orbs ============ -->
-  <g filter="url(#softHalo)" opacity="0.5">
-    <circle cx="180" cy="160" r="90" fill="#1E88E5" opacity="0.15">
-      <animate attributeName="cx" values="180;220;180" dur="14s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="160;140;160" dur="14s" repeatCount="indefinite"/>
-      <animate attributeName="r" values="90;110;90" dur="14s" repeatCount="indefinite"/>
+  <!-- Twinkling stars -->
+  <g fill="#FFFFFF">
+    <circle cx="150" cy="60"   r="1"><animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite"/></circle>
+    <circle cx="320" cy="90"   r="0.8"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.5s" repeatCount="indefinite" begin="-0.7s"/></circle>
+    <circle cx="510" cy="50"   r="1"><animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="-1.2s"/></circle>
+    <circle cx="720" cy="80"   r="0.9"><animate attributeName="opacity" values="0.2;1;0.2" dur="4s" repeatCount="indefinite" begin="-2s"/></circle>
+    <circle cx="920" cy="60"   r="1"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.5s" repeatCount="indefinite" begin="-1.5s"/></circle>
+    <circle cx="1120" cy="100" r="0.8"><animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="-0.4s"/></circle>
+    <circle cx="200" cy="490"  r="0.9"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.5s" repeatCount="indefinite" begin="-2.3s"/></circle>
+    <circle cx="450" cy="510"  r="0.8"><animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="-0.9s"/></circle>
+    <circle cx="780" cy="495"  r="1"><animate attributeName="opacity" values="0.2;1;0.2" dur="4s" repeatCount="indefinite" begin="-1.7s"/></circle>
+    <circle cx="1050" cy="490" r="0.8"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.5s" repeatCount="indefinite" begin="-2.6s"/></circle>
+  </g>
+
+  <!-- Soft bokeh orbs (large, blurred) -->
+  <g filter="url(#heroHalo)">
+    <circle cx="220" cy="180" r="100" fill="#1E88E5" opacity="0.15">
+      <animate attributeName="r" values="100;130;100" dur="14s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="1100" cy="380" r="120" fill="#64FFDA" opacity="0.10">
-      <animate attributeName="cx" values="1100;1060;1100" dur="18s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="380;360;380" dur="18s" repeatCount="indefinite"/>
-      <animate attributeName="r" values="120;140;120" dur="18s" repeatCount="indefinite"/>
+    <circle cx="1060" cy="380" r="120" fill="#64FFDA" opacity="0.10">
+      <animate attributeName="r" values="120;150;120" dur="18s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="950" cy="120" r="70" fill="#4FC3F7" opacity="0.12">
-      <animate attributeName="r" values="70;95;70" dur="12s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="250" cy="420" r="80" fill="#64FFDA" opacity="0.08">
-      <animate attributeName="r" values="80;100;80" dur="16s" repeatCount="indefinite"/>
+    <circle cx="900" cy="140" r="80" fill="#4FC3F7" opacity="0.12">
+      <animate attributeName="r" values="80;110;80" dur="12s" repeatCount="indefinite"/>
     </circle>
   </g>
 
-  <!-- ============ LAYER 4: ambient particle field ============ -->
-  <g fill="#64FFDA">
-    <circle r="1.6">
-      <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/>
-      <animateMotion path="M 50,400 C 300,200 600,500 1230,150" dur="14s" repeatCount="indefinite"/>
+  <!-- Drifting particles -->
+  <g>
+    <circle r="1.5" fill="#64FFDA">
+      <animateMotion path="M 50,400 C 300,200 600,500 1230,150" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="18s" repeatCount="indefinite"/>
     </circle>
-    <circle r="2" fill="#4FC3F7">
-      <animate attributeName="opacity" values="0;1;0" dur="6s" repeatCount="indefinite"/>
-      <animateMotion path="M 1230,400 C 900,150 400,450 50,100" dur="16s" repeatCount="indefinite"/>
+    <circle r="1.8" fill="#4FC3F7">
+      <animateMotion path="M 1230,400 C 900,150 400,450 50,100" dur="20s" repeatCount="indefinite" begin="-4s"/>
+      <animate attributeName="opacity" values="0;1;0" dur="20s" repeatCount="indefinite" begin="-4s"/>
     </circle>
-    <circle r="1.2">
-      <animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite" begin="-2s"/>
-      <animateMotion path="M 200,80 C 500,350 850,80 1100,300" dur="18s" repeatCount="indefinite" begin="-2s"/>
+    <circle r="1.2" fill="#7FFFE0">
+      <animateMotion path="M 600,30 C 800,200 400,400 1100,500" dur="22s" repeatCount="indefinite" begin="-7s"/>
+      <animate attributeName="opacity" values="0;1;0" dur="22s" repeatCount="indefinite" begin="-7s"/>
     </circle>
-    <circle r="1.8" fill="#1E88E5">
-      <animate attributeName="opacity" values="0;1;0" dur="7s" repeatCount="indefinite" begin="-4s"/>
-      <animateMotion path="M 80,250 C 400,80 700,400 1200,200" dur="20s" repeatCount="indefinite" begin="-4s"/>
+    <circle r="1.6" fill="#1E88E5">
+      <animateMotion path="M 80,250 C 400,80 700,400 1200,200" dur="24s" repeatCount="indefinite" begin="-11s"/>
+      <animate attributeName="opacity" values="0;1;0" dur="24s" repeatCount="indefinite" begin="-11s"/>
     </circle>
-    <circle r="1.4">
-      <animate attributeName="opacity" values="0;1;0" dur="6s" repeatCount="indefinite" begin="-1s"/>
-      <animateMotion path="M 900,460 C 600,250 300,460 50,200" dur="22s" repeatCount="indefinite" begin="-1s"/>
-    </circle>
-    <circle r="1" fill="#7FFFE0">
-      <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" begin="-3s"/>
-      <animateMotion path="M 600,50 C 800,200 400,300 1100,450" dur="19s" repeatCount="indefinite" begin="-3s"/>
-    </circle>
-    <circle r="1.5">
-      <animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite" begin="-6s"/>
-      <animateMotion path="M 1150,50 C 850,300 450,150 100,400" dur="21s" repeatCount="indefinite" begin="-6s"/>
-    </circle>
-    <!-- Static twinkling stars -->
-    <g>
-      <circle cx="120" cy="80" r="1.2"><animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite"/></circle>
-      <circle cx="320" cy="50" r="1"><animate attributeName="opacity" values="0.2;1;0.2" dur="4s" repeatCount="indefinite" begin="-1s"/></circle>
-      <circle cx="520" cy="90" r="1.3"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.5s" repeatCount="indefinite" begin="-0.5s"/></circle>
-      <circle cx="720" cy="60" r="1"><animate attributeName="opacity" values="0.2;1;0.2" dur="4.5s" repeatCount="indefinite" begin="-2s"/></circle>
-      <circle cx="920" cy="100" r="1.4"><animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="-1.5s"/></circle>
-      <circle cx="1120" cy="70" r="1.1"><animate attributeName="opacity" values="0.2;1;0.2" dur="4s" repeatCount="indefinite" begin="-2.5s"/></circle>
-      <circle cx="200" cy="440" r="1"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.5s" repeatCount="indefinite" begin="-1s"/></circle>
-      <circle cx="450" cy="470" r="1.2"><animate attributeName="opacity" values="0.2;1;0.2" dur="4s" repeatCount="indefinite" begin="-2s"/></circle>
-      <circle cx="780" cy="450" r="1"><animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="-0.5s"/></circle>
-      <circle cx="1050" cy="430" r="1.3"><animate attributeName="opacity" values="0.2;1;0.2" dur="4.5s" repeatCount="indefinite" begin="-3s"/></circle>
-    </g>
   </g>
 
-  <!-- ============ LAYER 5: geometric ornaments ============ -->
-  <!-- Top decorative ornament -->
-  <g transform="translate(640, 105)" opacity="0.8">
-    <line x1="-180" y1="0" x2="-30" y2="0" stroke="url(#ornamentGrad)" stroke-width="1"/>
-    <line x1="30" y1="0" x2="180" y2="0" stroke="url(#ornamentGrad)" stroke-width="1"/>
-    <g fill="none" stroke="#64FFDA" stroke-width="1">
-      <polygon points="0,-6 6,0 0,6 -6,0">
-        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="12s" repeatCount="indefinite"/>
-      </polygon>
-      <circle cx="-22" cy="0" r="2" fill="#64FFDA"/>
-      <circle cx="22" cy="0" r="2" fill="#64FFDA"/>
-    </g>
+  <!-- ────── ROUNDED FRAME (soft folded edges) ────── -->
+  <rect x="40" y="40" width="1200" height="480" rx="40" ry="40"
+        fill="none" stroke="#1E3A5F" stroke-width="1.5" opacity="0.7"/>
+  <rect x="48" y="48" width="1184" height="464" rx="36" ry="36"
+        fill="none" stroke="#64FFDA" stroke-width="0.4" opacity="0.4"/>
+
+  <!-- Top section eyebrow -->
+  <g transform="translate(640, 100)" opacity="0">
+    <line x1="-130" y1="0" x2="-12" y2="0" stroke="url(#heroLine)" stroke-width="0.6"/>
+    <line x1="12" y1="0" x2="130" y2="0" stroke="url(#heroLine)" stroke-width="0.6"/>
+    <circle cx="0" cy="0" r="2.5" fill="none" stroke="#64FFDA" stroke-width="0.8"/>
+    <circle cx="0" cy="0" r="1" fill="#64FFDA"/>
+    <animate attributeName="opacity" from="0" to="0.8" dur="1.5s" fill="freeze"/>
   </g>
 
-  <!-- Section label above title -->
-  <text x="640" y="138" text-anchor="middle" class="lux-mono"
-        font-size="11" font-weight="500" fill="#64FFDA" letter-spacing="14"
-        opacity="0">
-    PORTFOLIO &#x2022; 2026
-    <animate attributeName="opacity" from="0" to="1" dur="1.5s" begin="0s" fill="freeze"/>
+  <text x="640" y="135" text-anchor="middle" class="mono"
+        font-size="11" font-weight="500" fill="#64FFDA" letter-spacing="18" opacity="0">
+    PORTFOLIO &#x2022; ANNO 2026
+    <animate attributeName="opacity" from="0" to="1" dur="1.5s" begin="0.3s" fill="freeze"/>
   </text>
 
-  <!-- ============ LAYER 6: cinematic title ============ -->
+  <!-- ────── HERO TITLE (Italiana — ultra elegant) ────── -->
   <!-- Soft outer aura -->
-  <text x="640" y="240" text-anchor="middle" class="lux-title"
-        font-size="92" font-weight="900" fill="#64FFDA" opacity="0.08" letter-spacing="14"
-        filter="url(#softHalo)">
+  <text x="640" y="280" text-anchor="middle" class="ita"
+        font-size="118" fill="#64FFDA" opacity="0.08" letter-spacing="24"
+        filter="url(#heroHalo)">
     MOHAMED BADR
   </text>
 
-  <!-- Main title (glowing, with gradient) -->
-  <g filter="url(#cinemaGlow)">
-    <text x="640" y="240" text-anchor="middle" class="lux-title"
-          font-size="92" font-weight="900" fill="url(#titleGrad)" letter-spacing="14" opacity="0">
+  <!-- Main title -->
+  <g filter="url(#heroGlow)">
+    <text x="640" y="280" text-anchor="middle" class="ita"
+          font-size="118" fill="url(#heroTitleGrad)" letter-spacing="24" opacity="0">
       MOHAMED BADR
-      <animate attributeName="opacity" from="0" to="1" dur="2s" begin="0.3s" fill="freeze"/>
+      <animate attributeName="opacity" from="0" to="1" dur="2.5s" begin="0.5s" fill="freeze"/>
     </text>
   </g>
 
-  <!-- Hairline overlay (chromatic shimmer) -->
-  <text x="640" y="240" text-anchor="middle" class="lux-title"
-        font-size="92" font-weight="900" fill="none" stroke="#FFFFFF" stroke-width="0.3"
-        letter-spacing="14" opacity="0" filter="url(#chromaShift)">
+  <!-- Hairline outline for depth -->
+  <text x="640" y="280" text-anchor="middle" class="ita"
+        font-size="118" fill="none" stroke="#FFFFFF" stroke-width="0.25"
+        letter-spacing="24" opacity="0">
     MOHAMED BADR
-    <animate attributeName="opacity" values="0;0.6;0.3;0.6" dur="6s" begin="2.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.5;0.2;0.5" dur="6s" begin="3s" repeatCount="indefinite"/>
   </text>
 
-  <!-- ============ LAYER 7: decorative line under title ============ -->
-  <g transform="translate(640, 275)" opacity="0">
-    <line x1="-260" y1="0" x2="-25" y2="0" stroke="url(#ornamentGrad)" stroke-width="1.2"/>
-    <line x1="25" y1="0" x2="260" y2="0" stroke="url(#ornamentGrad)" stroke-width="1.2"/>
-    <g fill="none" stroke="#64FFDA" stroke-width="1">
-      <circle cx="0" cy="0" r="4" fill="#0A192F"/>
-      <circle cx="0" cy="0" r="2" fill="#64FFDA">
-        <animate attributeName="r" values="2;3.5;2" dur="2s" repeatCount="indefinite"/>
+  <!-- ────── DECORATIVE ORNAMENT UNDER TITLE ────── -->
+  <g transform="translate(640, 320)" opacity="0">
+    <line x1="-280" y1="0" x2="-30" y2="0" stroke="url(#heroLine)" stroke-width="1"/>
+    <line x1="30" y1="0" x2="280" y2="0" stroke="url(#heroLine)" stroke-width="1"/>
+    <!-- Center diamond ornament -->
+    <g>
+      <circle cx="0" cy="0" r="9" fill="#0A192F" stroke="#64FFDA" stroke-width="0.8" opacity="0.95"/>
+      <circle cx="0" cy="0" r="5" fill="none" stroke="#64FFDA" stroke-width="0.5">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="12s" repeatCount="indefinite"/>
       </circle>
-      <line x1="-15" y1="0" x2="-7" y2="0"/>
-      <line x1="7" y1="0" x2="15" y2="0"/>
+      <circle cx="0" cy="0" r="1.5" fill="#64FFDA">
+        <animate attributeName="r" values="1.5;2.5;1.5" dur="2s" repeatCount="indefinite"/>
+      </circle>
     </g>
-    <animate attributeName="opacity" from="0" to="1" dur="1.5s" begin="1.5s" fill="freeze"/>
+    <animate attributeName="opacity" from="0" to="1" dur="1.5s" begin="2s" fill="freeze"/>
   </g>
 
-  <!-- ============ LAYER 8: elegant subtitle ============ -->
-  <text x="640" y="320" text-anchor="middle" class="lux-sub"
-        font-size="28" font-weight="300" fill="#CCD6F6" font-style="italic" letter-spacing="6"
-        opacity="0">
+  <!-- ────── SUBTITLE ────── -->
+  <text x="640" y="370" text-anchor="middle" class="cor"
+        font-size="30" font-style="italic" font-weight="300" fill="#CCD6F6" letter-spacing="6" opacity="0">
     Full-Stack Developer &#x2022; SaaS Architect &#x2022; Digital Craftsman
-    <animate attributeName="opacity" from="0" to="0.95" dur="2s" begin="1.8s" fill="freeze"/>
+    <animate attributeName="opacity" from="0" to="0.95" dur="2s" begin="2.3s" fill="freeze"/>
   </text>
 
-  <!-- ============ LAYER 9: code-style tagline ============ -->
-  <g transform="translate(640, 365)" opacity="0">
-    <text x="0" y="0" text-anchor="middle" class="lux-mono"
-          font-size="15" font-weight="400" fill="#8892B0" letter-spacing="3">
-      <tspan fill="#64FFDA">const</tspan>
-      <tspan fill="#CCD6F6"> philosophy </tspan>
-      <tspan fill="#4FC3F7">=</tspan>
-      <tspan fill="#7FFFE0"> 'craft.products.that.matter()'</tspan>
-      <tspan fill="#CCD6F6">;</tspan>
-    </text>
-    <animate attributeName="opacity" from="0" to="1" dur="2s" begin="2.5s" fill="freeze"/>
-  </g>
-
-  <!-- ============ LAYER 10: Telegram floating chip ============ -->
-  <g transform="translate(640, 430)" opacity="0">
-    <rect x="-155" y="-22" width="310" height="44" rx="22"
-          fill="#0088CC" fill-opacity="0.10" stroke="#64FFDA" stroke-width="1" stroke-opacity="0.6">
-      <animate attributeName="stroke-opacity" values="0.4;0.9;0.4" dur="3s" repeatCount="indefinite"/>
-      <animate attributeName="fill-opacity" values="0.1;0.25;0.1" dur="3s" repeatCount="indefinite"/>
-    </rect>
-    <g transform="translate(-118, 0)">
-      <!-- Telegram paper-plane icon -->
-      <path d="M -12,0 L 12,-9 L 8,9 L 1,3 L -8,8 L -3,-1 Z" fill="#64FFDA" opacity="0.9">
-        <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite"/>
-      </path>
-    </g>
-    <text x="20" y="5" text-anchor="middle" class="lux-mono"
-          font-size="15" font-weight="500" fill="#64FFDA" letter-spacing="6">
-      TELEGRAM &#x2022; @Idlexaz
+  <!-- ────── PHILOSOPHY (mono code) ────── -->
+  <g transform="translate(640, 415)" opacity="0">
+    <text text-anchor="middle" class="mono"
+          font-size="15" font-weight="300" letter-spacing="2">
+      <tspan fill="#64FFDA">const</tspan><tspan fill="#CCD6F6"> philosophy </tspan><tspan fill="#4FC3F7">=</tspan><tspan fill="#7FFFE0"> &quot;build slowly &#x2022; ship boldly &#x2022; craft endlessly&quot;</tspan><tspan fill="#CCD6F6">;</tspan>
     </text>
     <animate attributeName="opacity" from="0" to="1" dur="2s" begin="3s" fill="freeze"/>
   </g>
 
-  <!-- ============ LAYER 11: corner ornaments (luxury frame) ============ -->
-  <g stroke="#64FFDA" stroke-width="1.5" fill="none" opacity="0.7">
-    <!-- TL -->
-    <path d="M 30,30 L 30,60 M 30,30 L 60,30">
-      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
-    </path>
-    <path d="M 30,30 L 90,30 M 30,30 L 30,90" stroke-width="0.4" opacity="0.4"/>
-    <!-- TR -->
-    <path d="M 1250,30 L 1250,60 M 1250,30 L 1220,30">
-      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" begin="-0.7s"/>
-    </path>
-    <path d="M 1250,30 L 1190,30 M 1250,30 L 1250,90" stroke-width="0.4" opacity="0.4"/>
-    <!-- BL -->
-    <path d="M 30,490 L 30,460 M 30,490 L 60,490">
-      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" begin="-1.4s"/>
-    </path>
-    <path d="M 30,490 L 90,490 M 30,490 L 30,430" stroke-width="0.4" opacity="0.4"/>
-    <!-- BR -->
-    <path d="M 1250,490 L 1250,460 M 1250,490 L 1220,490">
-      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" begin="-2.1s"/>
-    </path>
-    <path d="M 1250,490 L 1190,490 M 1250,490 L 1250,430" stroke-width="0.4" opacity="0.4"/>
+  <!-- ────── TELEGRAM PILL (rounded) ────── -->
+  <g transform="translate(640, 470)" opacity="0">
+    <rect x="-170" y="-22" width="340" height="44" rx="22" ry="22"
+          fill="#0088CC" fill-opacity="0.10" stroke="#64FFDA" stroke-width="1" stroke-opacity="0.65">
+      <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="fill-opacity" values="0.1;0.25;0.1" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <g transform="translate(-128, 0)">
+      <circle cx="0" cy="0" r="11" fill="#0088CC" opacity="0.3"/>
+      <path d="M -7,-1 L 7,-5 L 4,7 L 1,3 L -4,5 L -2,-1 Z" fill="#64FFDA"/>
+    </g>
+    <text x="20" y="5" text-anchor="middle" class="mono"
+          font-size="14" font-weight="500" fill="#64FFDA" letter-spacing="6">
+      DM ON TELEGRAM  &#10148;  @Idlexaz
+    </text>
+    <animate attributeName="opacity" from="0" to="1" dur="2s" begin="3.5s" fill="freeze"/>
   </g>
 
-  <!-- ============ LAYER 12: scanning beam ============ -->
-  <rect x="0" y="0" width="1280" height="2" fill="#64FFDA" opacity="0">
-    <animate attributeName="y" values="0;520" dur="7s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0;0.4;0" dur="7s" repeatCount="indefinite"/>
-  </rect>
+  <!-- ────── SOFT CORNER ORNAMENTS (curved) ────── -->
+  <g stroke="#64FFDA" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.65">
+    <path d="M 80,70 Q 70,70 70,80 L 70,100">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 70,80 L 110,70" opacity="0.5"/>
+    <path d="M 1200,70 Q 1210,70 1210,80 L 1210,100">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite" begin="-0.7s"/>
+    </path>
+    <path d="M 1210,80 L 1170,70" opacity="0.5"/>
+    <path d="M 80,490 Q 70,490 70,480 L 70,460">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite" begin="-1.4s"/>
+    </path>
+    <path d="M 70,480 L 110,490" opacity="0.5"/>
+    <path d="M 1200,490 Q 1210,490 1210,480 L 1210,460">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite" begin="-2.1s"/>
+    </path>
+    <path d="M 1210,480 L 1170,490" opacity="0.5"/>
+  </g>
 
-  <!-- ============ LAYER 13: vignette overlay ============ -->
-  <rect width="1280" height="520" fill="url(#vignette)" pointer-events="none"/>
+  <!-- Vignette overlay -->
+  <rect width="1280" height="560" fill="url(#heroVignette)" pointer-events="none"/>
 </svg>

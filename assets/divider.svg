@@ -1,14 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 40" width="1280" height="40" role="img" aria-label="Section divider">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 60" width="1280" height="60" role="img" aria-label="Section divider">
   <defs>
-    <linearGradient id="divGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="dvGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%"   stop-color="#64FFDA" stop-opacity="0"/>
-      <stop offset="20%"  stop-color="#1E88E5" stop-opacity="0.6"/>
+      <stop offset="25%"  stop-color="#1E88E5" stop-opacity="0.5"/>
       <stop offset="50%"  stop-color="#64FFDA" stop-opacity="1"/>
-      <stop offset="80%"  stop-color="#1E88E5" stop-opacity="0.6"/>
+      <stop offset="75%"  stop-color="#1E88E5" stop-opacity="0.5"/>
       <stop offset="100%" stop-color="#64FFDA" stop-opacity="0"/>
     </linearGradient>
-    <filter id="divGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="2"/>
+    <filter id="dvGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.5"/>
       <feMerge>
         <feMergeNode/>
         <feMergeNode in="SourceGraphic"/>
@@ -16,54 +16,57 @@
     </filter>
   </defs>
 
-  <!-- Main horizontal line -->
-  <line x1="0" y1="20" x2="1280" y2="20" stroke="url(#divGrad)" stroke-width="1.2" filter="url(#divGlow)"/>
+  <!-- Soft curved double line (top + bottom of a thin lens shape) -->
+  <path d="M 0,30 Q 320,22 640,30 T 1280,30"
+        fill="none" stroke="url(#dvGrad)" stroke-width="1.2" stroke-linecap="round" filter="url(#dvGlow)"/>
+  <path d="M 0,30 Q 320,38 640,30 T 1280,30"
+        fill="none" stroke="url(#dvGrad)" stroke-width="0.5" stroke-linecap="round" opacity="0.5"/>
 
-  <!-- Center ornament -->
-  <g transform="translate(640, 20)" filter="url(#divGlow)">
-    <!-- Outer diamond -->
-    <polygon points="0,-14 14,0 0,14 -14,0" fill="none" stroke="#64FFDA" stroke-width="1.2">
-      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite"/>
-    </polygon>
-    <!-- Inner diamond -->
-    <polygon points="0,-7 7,0 0,7 -7,0" fill="none" stroke="#4FC3F7" stroke-width="1">
-      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="12s" repeatCount="indefinite"/>
-    </polygon>
-    <!-- Center dot -->
+  <!-- Center ornament: nested rounded ellipses -->
+  <g transform="translate(640, 30)" filter="url(#dvGlow)">
+    <!-- Outer lens shape -->
+    <ellipse cx="0" cy="0" rx="22" ry="9" fill="none" stroke="#64FFDA" stroke-width="0.8" stroke-linecap="round">
+      <animate attributeName="rx" values="22;26;22" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="9;7;9" dur="3s" repeatCount="indefinite"/>
+    </ellipse>
+    <!-- Inner softer ellipse -->
+    <ellipse cx="0" cy="0" rx="14" ry="5" fill="none" stroke="#4FC3F7" stroke-width="0.6" stroke-linecap="round">
+      <animate attributeName="rx" values="14;17;14" dur="3s" repeatCount="indefinite" begin="-0.4s"/>
+      <animate attributeName="ry" values="5;4;5" dur="3s" repeatCount="indefinite" begin="-0.4s"/>
+    </ellipse>
+    <!-- Center pulse dot -->
     <circle cx="0" cy="0" r="2.5" fill="#64FFDA">
       <animate attributeName="r" values="2.5;4;2.5" dur="2s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
     </circle>
-    <!-- Side accents -->
-    <circle cx="-30" cy="0" r="1.5" fill="#64FFDA">
-      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" begin="-0.5s"/>
+    <!-- Side accent dots -->
+    <circle cx="-40" cy="0" r="1.2" fill="#64FFDA" opacity="0.6">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2.5s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="30" cy="0" r="1.5" fill="#64FFDA">
-      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" begin="-1s"/>
+    <circle cx="40" cy="0" r="1.2" fill="#64FFDA" opacity="0.6">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2.5s" repeatCount="indefinite" begin="-0.8s"/>
     </circle>
-    <line x1="-50" y1="0" x2="-22" y2="0" stroke="#64FFDA" stroke-width="0.6" opacity="0.6"/>
-    <line x1="22" y1="0" x2="50" y2="0" stroke="#64FFDA" stroke-width="0.6" opacity="0.6"/>
   </g>
 
-  <!-- Far decorative endpoints -->
-  <g fill="#64FFDA" opacity="0.6">
-    <circle cx="200" cy="20" r="1.2">
+  <!-- Outer ornamental tick marks -->
+  <g fill="#64FFDA" opacity="0.55">
+    <circle cx="240" cy="30" r="1.1">
       <animate attributeName="opacity" values="0.3;0.9;0.3" dur="3s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="400" cy="20" r="1.2">
+    <circle cx="420" cy="30" r="1.1">
       <animate attributeName="opacity" values="0.3;0.9;0.3" dur="3s" repeatCount="indefinite" begin="-0.5s"/>
     </circle>
-    <circle cx="880" cy="20" r="1.2">
+    <circle cx="860" cy="30" r="1.1">
       <animate attributeName="opacity" values="0.3;0.9;0.3" dur="3s" repeatCount="indefinite" begin="-1s"/>
     </circle>
-    <circle cx="1080" cy="20" r="1.2">
+    <circle cx="1040" cy="30" r="1.1">
       <animate attributeName="opacity" values="0.3;0.9;0.3" dur="3s" repeatCount="indefinite" begin="-1.5s"/>
     </circle>
   </g>
 
-  <!-- Light pulse traveling along the line -->
-  <circle cy="20" r="3" fill="#64FFDA" filter="url(#divGlow)">
-    <animate attributeName="cx" values="0;1280" dur="6s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0;1;1;0" dur="6s" repeatCount="indefinite"/>
+  <!-- Traveling light pulse -->
+  <circle cy="30" r="2.8" fill="#64FFDA" filter="url(#dvGlow)">
+    <animate attributeName="cx" values="0;1280" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="7s" repeatCount="indefinite"/>
   </circle>
 </svg>
