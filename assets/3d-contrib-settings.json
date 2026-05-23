@@ -20,16 +20,6 @@
     "hueRatio": -4
   },
   {
-    "type": "season",
-    "fileName": "profile-season-animate.svg",
-    "backgroundColor": "#0A192F",
-    "foregroundColor": "#CCD6F6",
-    "strongColor": "#64FFDA",
-    "weakColor": "#8892B0",
-    "radarColor": "#1E88E5",
-    "growingAnimation": true
-  },
-  {
     "type": "normal",
     "fileName": "profile-night-view.svg",
     "backgroundColor": "#0A192F",
