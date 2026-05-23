@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 200" width="1280" height="200" role="img" aria-label="Footer — Thank you for visiting">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&amp;family=Cormorant+Garamond:ital,wght@1,300&amp;family=Fira+Code:wght@400&amp;display=swap');
+      .ft-title { font-family: 'Cinzel', 'Trajan Pro', Georgia, serif; }
+      .ft-sub   { font-family: 'Cormorant Garamond', Garamond, Georgia, serif; }
+      .ft-mono  { font-family: 'Fira Code', Consolas, monospace; }
+    </style>
+    <linearGradient id="ftBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#020817"/>
+      <stop offset="50%"  stop-color="#0A192F"/>
+      <stop offset="100%" stop-color="#020817"/>
+    </linearGradient>
+    <linearGradient id="ftAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#64FFDA" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#64FFDA" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#64FFDA" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="ftGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="200" fill="url(#ftBg)"/>
+
+  <!-- Subtle starfield -->
+  <g fill="#64FFDA" opacity="0.5">
+    <circle cx="120" cy="40" r="1"><animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite"/></circle>
+    <circle cx="280" cy="80" r="0.8"><animate attributeName="opacity" values="0.2;1;0.2" dur="4s" repeatCount="indefinite" begin="-1s"/></circle>
+    <circle cx="450" cy="50" r="1.2"><animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="-0.5s"/></circle>
+    <circle cx="640" cy="30" r="1"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.5s" repeatCount="indefinite" begin="-2s"/></circle>
+    <circle cx="830" cy="70" r="1.1"><animate attributeName="opacity" values="0.2;1;0.2" dur="4s" repeatCount="indefinite" begin="-1.5s"/></circle>
+    <circle cx="990" cy="40" r="0.9"><animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="-2.5s"/></circle>
+    <circle cx="1150" cy="80" r="1.2"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.5s" repeatCount="indefinite" begin="-1s"/></circle>
+    <circle cx="200" cy="150" r="1"><animate attributeName="opacity" values="0.2;1;0.2" dur="4s" repeatCount="indefinite" begin="-0.7s"/></circle>
+    <circle cx="540" cy="170" r="0.8"><animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="-1.3s"/></circle>
+    <circle cx="900" cy="160" r="1.1"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.5s" repeatCount="indefinite" begin="-2s"/></circle>
+    <circle cx="1100" cy="150" r="1"><animate attributeName="opacity" values="0.2;1;0.2" dur="4s" repeatCount="indefinite" begin="-0.4s"/></circle>
+  </g>
+
+  <!-- Drifting particles -->
+  <g fill="#64FFDA">
+    <circle r="1.5">
+      <animateMotion path="M 50,180 C 400,100 800,180 1230,80" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="14s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="1.2" fill="#4FC3F7">
+      <animateMotion path="M 1230,180 C 900,80 400,180 50,80" dur="16s" repeatCount="indefinite" begin="-3s"/>
+      <animate attributeName="opacity" values="0;1;0" dur="16s" repeatCount="indefinite" begin="-3s"/>
+    </circle>
+  </g>
+
+  <!-- Top accent line -->
+  <line x1="0" y1="0" x2="1280" y2="0" stroke="url(#ftAccent)" stroke-width="1.5"/>
+
+  <!-- Center ornament -->
+  <g transform="translate(640, 55)" filter="url(#ftGlow)" opacity="0.9">
+    <polygon points="0,-10 10,0 0,10 -10,0" fill="none" stroke="#64FFDA" stroke-width="1">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="18s" repeatCount="indefinite"/>
+    </polygon>
+    <circle cx="0" cy="0" r="2" fill="#64FFDA">
+      <animate attributeName="r" values="2;3;2" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Main message -->
+  <g filter="url(#ftGlow)">
+    <text x="640" y="105" text-anchor="middle" class="ft-title"
+          font-size="32" font-weight="600" fill="#64FFDA" letter-spacing="14">
+      THANK YOU FOR VISITING
+    </text>
+  </g>
+
+  <!-- Tagline -->
+  <text x="640" y="140" text-anchor="middle" class="ft-sub"
+        font-size="18" font-style="italic" font-weight="300" fill="#CCD6F6" letter-spacing="4" opacity="0.85">
+    Crafted with passion in the cool blue hours
+  </text>
+
+  <!-- Signature mono row -->
+  <g transform="translate(640, 172)">
+    <text x="0" y="0" text-anchor="middle" class="ft-mono" font-size="11"
+          font-weight="400" fill="#8892B0" letter-spacing="6">
+      &#9670; MOHAMED BADR &#9670; 2026 &#9670; @Idlexaz &#9670;
+    </text>
+  </g>
+
+  <!-- Bottom accent line -->
+  <line x1="0" y1="200" x2="1280" y2="200" stroke="url(#ftAccent)" stroke-width="1.5"/>
+</svg>
