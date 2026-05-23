@@ -1,0 +1,16 @@
+{
+  "type": "season",
+  "backgroundImage": "",
+  "settings": {
+    "l1Color": "#112240",
+    "l2Color": "#1E3A5F",
+    "l3Color": "#1E88E5",
+    "l4Color": "#4FC3F7",
+    "dayOfWeekColor": "#64FFDA",
+    "monthColor": "#CCD6F6",
+    "weekNumberColor": "#8892B0",
+    "contributionColor": "#64FFDA",
+    "growingAnimation": true,
+    "showWeekNumber": false
+  }
+}
