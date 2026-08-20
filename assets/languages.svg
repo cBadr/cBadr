@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 236" width="440" height="236" role="img" aria-label="Language distribution across 43 public repositories: TypeScript 35.1 percent, PHP 25.9, JavaScript 17.3, PL/pgSQL 9.7, CSS 8.8, other 3.3.">
+  <rect width="440" height="236" rx="12" fill="#0E1223"/>
+  <rect x=".5" y=".5" width="439" height="235" rx="12" fill="none" stroke="#1E293B"/>
+  <text x="24" y="36" font-family="'Segoe UI',-apple-system,'Helvetica Neue',Arial,sans-serif" font-size="15" font-weight="600" fill="#F8FAFC">Languages</text>
+  <text x="24" y="56" font-family="'Segoe UI',-apple-system,'Helvetica Neue',Arial,sans-serif" font-size="12" fill="#94A3B8">by bytes, across 43 public repositories</text>
+  <clipPath id="barclip"><rect x="24" y="76" width="392" height="12" rx="6"/></clipPath>
+  <g clip-path="url(#barclip)">
+    <rect x="24.0" y="76" width="137.6" height="12" fill="#3178c6"/>
+    <rect x="161.6" y="76" width="101.4" height="12" fill="#4F5D95"/>
+    <rect x="263.0" y="76" width="67.7" height="12" fill="#f1e05a"/>
+    <rect x="330.7" y="76" width="37.9" height="12" fill="#336790"/>
+    <rect x="368.7" y="76" width="34.5" height="12" fill="#663399"/>
+    <rect x="403.1" y="76" width="12.9" height="12" fill="#64748B"/>
+  </g>
+  <g>
+    <circle cx="30" cy="120" r="5" fill="#3178c6"/>
+    <text x="44" y="124" font-family="'Segoe UI',-apple-system,'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#F8FAFC">TypeScript</text>
+    <text x="206" y="124" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'DejaVu Sans Mono',monospace" font-size="12.5" fill="#94A3B8" text-anchor="end">35.1%</text>
+  </g>
+  <g>
+    <circle cx="240" cy="120" r="5" fill="#4F5D95"/>
+    <text x="254" y="124" font-family="'Segoe UI',-apple-system,'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#F8FAFC">PHP</text>
+    <text x="416" y="124" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'DejaVu Sans Mono',monospace" font-size="12.5" fill="#94A3B8" text-anchor="end">25.9%</text>
+  </g>
+  <g>
+    <circle cx="30" cy="150" r="5" fill="#f1e05a"/>
+    <text x="44" y="154" font-family="'Segoe UI',-apple-system,'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#F8FAFC">JavaScript</text>
+    <text x="206" y="154" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'DejaVu Sans Mono',monospace" font-size="12.5" fill="#94A3B8" text-anchor="end">17.3%</text>
+  </g>
+  <g>
+    <circle cx="240" cy="150" r="5" fill="#336790"/>
+    <text x="254" y="154" font-family="'Segoe UI',-apple-system,'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#F8FAFC">PL/pgSQL</text>
+    <text x="416" y="154" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'DejaVu Sans Mono',monospace" font-size="12.5" fill="#94A3B8" text-anchor="end">9.7%</text>
+  </g>
+  <g>
+    <circle cx="30" cy="180" r="5" fill="#663399"/>
+    <text x="44" y="184" font-family="'Segoe UI',-apple-system,'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#F8FAFC">CSS</text>
+    <text x="206" y="184" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'DejaVu Sans Mono',monospace" font-size="12.5" fill="#94A3B8" text-anchor="end">8.8%</text>
+  </g>
+  <g>
+    <circle cx="240" cy="180" r="5" fill="#64748B"/>
+    <text x="254" y="184" font-family="'Segoe UI',-apple-system,'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#F8FAFC">Other</text>
+    <text x="416" y="184" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'DejaVu Sans Mono',monospace" font-size="12.5" fill="#94A3B8" text-anchor="end">3.3%</text>
+  </g>
+</svg>
